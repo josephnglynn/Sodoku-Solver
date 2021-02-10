@@ -19,7 +19,9 @@
 
     <footer>
         <button on:click={()=>changePage(Pages.ChooseSize)} class="is-primary button"  >Continue</button>
+        <p style="position: absolute; right: 0; bottom: 1px;">Written By Joseph Glynn</p>
     </footer>
+
 
 </main>
 
@@ -36,14 +38,13 @@
     main {
         text-align: center;
         padding: 1em;
-        max-width: 240px;
         margin: 0 auto;
     }
 
     h1 {
         color: #ff3e00;
         text-transform: uppercase;
-        font-size: 4em;
+        font-size: 3.5em;
         font-weight: 100;
     }
 

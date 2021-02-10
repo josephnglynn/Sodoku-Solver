@@ -50,4 +50,27 @@ export const solvePartOfSudoku = (state: Array<Array<number>>, n: number): [Arra
 
 
 
+const constraintPropagation = (state: Array<Array<number>>, n: number) => {
+    checkRowsAndColumns(state, n)
+    for (let i = 0; i < state.length; i++) {
+        for (let k = 0; k < state.length; k++) {
+            if (state[i][k] != 0) {
+
+            }
+        }
+    }
+}
+
+
+const checkRowsAndColumns = (state: Array<Array<number>>, n: number) => {
+    for (let i = 0; i < state.length; i++) {
+        let x = 0;
+        for (let k = 0; k < state.length; k++) {
+            x += state[i][k]
+        }
+        if (x == (n*n)*Math.round(n*n/2)) {
+
+        }
+    }
+}
 
