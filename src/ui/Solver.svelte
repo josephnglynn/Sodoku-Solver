@@ -70,23 +70,22 @@
     <div style="flex: 1; display: flex; justify-content: center; align-items: center; flex-direction: column">
         <StockSudoku state={state}/>
     </div>
-
+    <footer>
     {#if allInOneGo}
-        <footer>
             {#if complete}
                 <button transition:fly on:click={()=>changePage(Pages.Welcome)} class="is-primary button">Start Again
                 </button>
             {/if}
-        </footer>
+
     {:else }
-        <footer>
             {#if complete}
                 <button transition:fly on:click={()=>changePage(Pages.Welcome)} class="is-primary button">Start Again</button>
             {:else}
                 <button transition:fly on:click={()=>console.log("not implemented")} class="is-primary button">Next Step</button>
             {/if}
-        </footer>
     {/if}
+        <p style="position: absolute; right: 5px; bottom: 1px;">Written By Joseph Glynn</p>
+    </footer>
 </main>
 
 

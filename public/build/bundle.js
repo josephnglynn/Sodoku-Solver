@@ -678,26 +678,26 @@ var app = (function () {
     			p1 = element("p");
     			p1.textContent = "Written By Joseph Glynn";
     			set_style(div0, "height", "10vh");
-    			add_location(div0, file, 6, 4, 163);
+    			add_location(div0, file, 6, 4, 167);
     			attr_dev(h1, "class", "svelte-1mxhdm2");
-    			add_location(h1, file, 9, 8, 215);
-    			add_location(br, file, 10, 8, 257);
-    			add_location(p0, file, 11, 8, 270);
-    			add_location(div1, file, 8, 4, 201);
+    			add_location(h1, file, 9, 8, 219);
+    			add_location(br, file, 10, 8, 261);
+    			add_location(p0, file, 11, 8, 274);
+    			add_location(div1, file, 8, 4, 205);
     			set_style(div2, "flex", "1");
-    			add_location(div2, file, 16, 4, 345);
+    			add_location(div2, file, 16, 4, 349);
     			attr_dev(button, "class", "is-primary button svelte-1mxhdm2");
-    			add_location(button, file, 19, 8, 395);
+    			add_location(button, file, 19, 8, 399);
     			set_style(p1, "position", "absolute");
-    			set_style(p1, "right", "0");
+    			set_style(p1, "right", "5px");
     			set_style(p1, "bottom", "1px");
-    			add_location(p1, file, 20, 8, 501);
-    			add_location(footer, file, 18, 4, 378);
+    			add_location(p1, file, 20, 8, 505);
+    			add_location(footer, file, 18, 4, 382);
     			set_style(main, "display", "flex");
     			set_style(main, "flex-direction", "column");
     			set_style(main, "min-height", "100vh");
     			attr_dev(main, "class", "svelte-1mxhdm2");
-    			add_location(main, file, 4, 0, 86);
+    			add_location(main, file, 4, 0, 90);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -906,7 +906,7 @@ var app = (function () {
 
     			t = space();
     			attr_dev(tr, "class", "svelte-1cp22h7");
-    			add_location(tr, file$1, 20, 12, 570);
+    			add_location(tr, file$1, 20, 12, 574);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -982,7 +982,7 @@ var app = (function () {
     			t = space();
     			set_style(tr, "border-bottom", "solid");
     			attr_dev(tr, "class", "svelte-1cp22h7");
-    			add_location(tr, file$1, 9, 12, 221);
+    			add_location(tr, file$1, 9, 12, 225);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -1046,7 +1046,7 @@ var app = (function () {
     			td = element("td");
     			t = text(t_value);
     			attr_dev(td, "class", "svelte-1cp22h7");
-    			add_location(td, file$1, 25, 24, 772);
+    			add_location(td, file$1, 25, 24, 776);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, td, anchor);
@@ -1083,7 +1083,7 @@ var app = (function () {
     			t = text(t_value);
     			set_style(td, "border-right", "solid");
     			attr_dev(td, "class", "svelte-1cp22h7");
-    			add_location(td, file$1, 23, 24, 678);
+    			add_location(td, file$1, 23, 24, 682);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, td, anchor);
@@ -1160,7 +1160,7 @@ var app = (function () {
     			td = element("td");
     			t = text(t_value);
     			attr_dev(td, "class", "svelte-1cp22h7");
-    			add_location(td, file$1, 14, 24, 456);
+    			add_location(td, file$1, 14, 24, 460);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, td, anchor);
@@ -1197,7 +1197,7 @@ var app = (function () {
     			t = text(t_value);
     			set_style(td, "border-right", "solid");
     			attr_dev(td, "class", "svelte-1cp22h7");
-    			add_location(td, file$1, 12, 24, 358);
+    			add_location(td, file$1, 12, 24, 362);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, td, anchor);
@@ -1323,7 +1323,7 @@ var app = (function () {
     			}
 
     			attr_dev(table, "class", "svelte-1cp22h7");
-    			add_location(table, file$1, 6, 0, 141);
+    			add_location(table, file$1, 6, 0, 145);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1492,8 +1492,8 @@ var app = (function () {
     			h6.textContent = "Error: Must Be Greater Than 1";
     			attr_dev(h6, "class", "is-danger");
     			set_style(h6, "color", "red");
-    			add_location(h6, file$2, 32, 16, 843);
-    			add_location(div, file$2, 31, 12, 804);
+    			add_location(h6, file$2, 32, 16, 847);
+    			add_location(div, file$2, 31, 12, 808);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1550,6 +1550,8 @@ var app = (function () {
     	let t7;
     	let footer;
     	let button;
+    	let t9;
+    	let p;
     	let current;
     	let mounted;
     	let dispose;
@@ -1579,29 +1581,36 @@ var app = (function () {
     			footer = element("footer");
     			button = element("button");
     			button.textContent = "Continue";
+    			t9 = space();
+    			p = element("p");
+    			p.textContent = "Written By Joseph Glynn";
     			set_style(div0, "height", "10vh");
-    			add_location(div0, file$2, 18, 4, 417);
+    			add_location(div0, file$2, 18, 4, 421);
     			attr_dev(h1, "class", "svelte-15qey8f");
-    			add_location(h1, file$2, 21, 8, 469);
-    			add_location(div1, file$2, 20, 4, 455);
-    			add_location(h6, file$2, 26, 8, 657);
+    			add_location(h1, file$2, 21, 8, 473);
+    			add_location(div1, file$2, 20, 4, 459);
+    			add_location(h6, file$2, 26, 8, 661);
     			attr_dev(input, "type", "number");
-    			add_location(input, file$2, 28, 12, 715);
-    			add_location(label, file$2, 27, 8, 695);
+    			add_location(input, file$2, 28, 12, 719);
+    			add_location(label, file$2, 27, 8, 699);
     			set_style(div2, "flex", "1");
     			set_style(div2, "display", "flex");
     			set_style(div2, "justify-content", "center");
     			set_style(div2, "align-items", "center");
     			set_style(div2, "flex-direction", "column");
-    			add_location(div2, file$2, 24, 4, 519);
+    			add_location(div2, file$2, 24, 4, 523);
     			attr_dev(button, "class", "is-primary button svelte-15qey8f");
-    			add_location(button, file$2, 38, 8, 985);
-    			add_location(footer, file$2, 37, 4, 968);
+    			add_location(button, file$2, 38, 8, 989);
+    			set_style(p, "position", "absolute");
+    			set_style(p, "right", "5px");
+    			set_style(p, "bottom", "1px");
+    			add_location(p, file$2, 39, 8, 1073);
+    			add_location(footer, file$2, 37, 4, 972);
     			set_style(main, "display", "flex");
     			set_style(main, "flex-direction", "column");
     			set_style(main, "min-height", "100vh");
     			attr_dev(main, "class", "svelte-15qey8f");
-    			add_location(main, file$2, 16, 0, 340);
+    			add_location(main, file$2, 16, 0, 344);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1626,6 +1635,8 @@ var app = (function () {
     			append_dev(main, t7);
     			append_dev(main, footer);
     			append_dev(footer, button);
+    			append_dev(footer, t9);
+    			append_dev(footer, p);
     			current = true;
 
     			if (!mounted) {
@@ -2529,6 +2540,8 @@ var app = (function () {
     	let button0;
     	let t5;
     	let button1;
+    	let t7;
+    	let p;
     	let current;
     	let mounted;
     	let dispose;
@@ -2564,29 +2577,36 @@ var app = (function () {
     			t5 = space();
     			button1 = element("button");
     			button1.textContent = "Calculate All In One Go";
+    			t7 = space();
+    			p = element("p");
+    			p.textContent = "Written By Joseph Glynn";
     			set_style(div0, "height", "10vh");
-    			add_location(div0, file$4, 12, 4, 323);
+    			add_location(div0, file$4, 12, 4, 327);
     			attr_dev(h1, "class", "svelte-15qey8f");
-    			add_location(h1, file$4, 15, 8, 375);
-    			add_location(div1, file$4, 14, 4, 361);
+    			add_location(h1, file$4, 15, 8, 379);
+    			add_location(div1, file$4, 14, 4, 365);
     			set_style(div2, "flex", "1");
     			set_style(div2, "display", "flex");
     			set_style(div2, "justify-content", "center");
     			set_style(div2, "align-items", "center");
     			set_style(div2, "flex-direction", "column");
-    			add_location(div2, file$4, 18, 4, 434);
+    			add_location(div2, file$4, 18, 4, 438);
     			attr_dev(button0, "class", "is-primary button svelte-15qey8f");
     			set_style(button0, "margin-right", "20px");
-    			add_location(button0, file$4, 23, 8, 629);
+    			add_location(button0, file$4, 23, 8, 633);
     			attr_dev(button1, "class", "is-primary button svelte-15qey8f");
     			set_style(button1, "margin-left", "20px");
-    			add_location(button1, file$4, 24, 8, 811);
-    			add_location(footer, file$4, 22, 4, 612);
+    			add_location(button1, file$4, 24, 8, 815);
+    			set_style(p, "position", "absolute");
+    			set_style(p, "right", "5px");
+    			set_style(p, "bottom", "1px");
+    			add_location(p, file$4, 25, 8, 948);
+    			add_location(footer, file$4, 22, 4, 616);
     			set_style(main, "display", "flex");
     			set_style(main, "flex-direction", "column");
     			set_style(main, "min-height", "100vh");
     			attr_dev(main, "class", "svelte-15qey8f");
-    			add_location(main, file$4, 10, 0, 246);
+    			add_location(main, file$4, 10, 0, 250);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2605,6 +2625,8 @@ var app = (function () {
     			append_dev(footer, button0);
     			append_dev(footer, t5);
     			append_dev(footer, button1);
+    			append_dev(footer, t7);
+    			append_dev(footer, p);
     			current = true;
 
     			if (!mounted) {
@@ -2805,7 +2827,7 @@ var app = (function () {
     const file$5 = "src/ui/Solver.svelte";
 
     // (56:8) {:else }
-    function create_else_block_2$2(ctx) {
+    function create_else_block_1$2(ctx) {
     	let h1;
 
     	const block = {
@@ -2813,7 +2835,7 @@ var app = (function () {
     			h1 = element("h1");
     			h1.textContent = `${"Calculating . . ."}`;
     			attr_dev(h1, "class", "svelte-1688j5u");
-    			add_location(h1, file$5, 56, 12, 1503);
+    			add_location(h1, file$5, 56, 12, 1511);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -2827,7 +2849,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block_2$2.name,
+    		id: create_else_block_1$2.name,
     		type: "else",
     		source: "(56:8) {:else }",
     		ctx
@@ -2847,7 +2869,7 @@ var app = (function () {
     			h1 = element("h1");
     			h1.textContent = "Finished!";
     			attr_dev(h1, "class", "svelte-1688j5u");
-    			add_location(h1, file$5, 54, 12, 1440);
+    			add_location(h1, file$5, 54, 12, 1448);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -2885,156 +2907,8 @@ var app = (function () {
     	return block;
     }
 
-    // (72:4) {:else }
+    // (74:12) {:else}
     function create_else_block$2(ctx) {
-    	let footer;
-    	let current_block_type_index;
-    	let if_block;
-    	let current;
-    	const if_block_creators = [create_if_block_2$2, create_else_block_1$2];
-    	const if_blocks = [];
-
-    	function select_block_type_2(ctx, dirty) {
-    		if (/*complete*/ ctx[3]) return 0;
-    		return 1;
-    	}
-
-    	current_block_type_index = select_block_type_2(ctx);
-    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-
-    	const block = {
-    		c: function create() {
-    			footer = element("footer");
-    			if_block.c();
-    			add_location(footer, file$5, 72, 8, 1986);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, footer, anchor);
-    			if_blocks[current_block_type_index].m(footer, null);
-    			current = true;
-    		},
-    		p: function update(ctx, dirty) {
-    			let previous_block_index = current_block_type_index;
-    			current_block_type_index = select_block_type_2(ctx);
-
-    			if (current_block_type_index === previous_block_index) {
-    				if_blocks[current_block_type_index].p(ctx, dirty);
-    			} else {
-    				group_outros();
-
-    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
-    					if_blocks[previous_block_index] = null;
-    				});
-
-    				check_outros();
-    				if_block = if_blocks[current_block_type_index];
-
-    				if (!if_block) {
-    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    					if_block.c();
-    				} else {
-    					if_block.p(ctx, dirty);
-    				}
-
-    				transition_in(if_block, 1);
-    				if_block.m(footer, null);
-    			}
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(if_block);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(if_block);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(footer);
-    			if_blocks[current_block_type_index].d();
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_else_block$2.name,
-    		type: "else",
-    		source: "(72:4) {:else }",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (65:4) {#if allInOneGo}
-    function create_if_block$3(ctx) {
-    	let footer;
-    	let current;
-    	let if_block = /*complete*/ ctx[3] && create_if_block_1$2(ctx);
-
-    	const block = {
-    		c: function create() {
-    			footer = element("footer");
-    			if (if_block) if_block.c();
-    			add_location(footer, file$5, 65, 8, 1749);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, footer, anchor);
-    			if (if_block) if_block.m(footer, null);
-    			current = true;
-    		},
-    		p: function update(ctx, dirty) {
-    			if (/*complete*/ ctx[3]) {
-    				if (if_block) {
-    					if_block.p(ctx, dirty);
-
-    					if (dirty & /*complete*/ 8) {
-    						transition_in(if_block, 1);
-    					}
-    				} else {
-    					if_block = create_if_block_1$2(ctx);
-    					if_block.c();
-    					transition_in(if_block, 1);
-    					if_block.m(footer, null);
-    				}
-    			} else if (if_block) {
-    				group_outros();
-
-    				transition_out(if_block, 1, 1, () => {
-    					if_block = null;
-    				});
-
-    				check_outros();
-    			}
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(if_block);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(if_block);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(footer);
-    			if (if_block) if_block.d();
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block$3.name,
-    		type: "if",
-    		source: "(65:4) {#if allInOneGo}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (76:12) {:else}
-    function create_else_block_1$2(ctx) {
     	let button;
     	let button_transition;
     	let current;
@@ -3046,7 +2920,7 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Next Step";
     			attr_dev(button, "class", "is-primary button svelte-1688j5u");
-    			add_location(button, file$5, 76, 16, 2185);
+    			add_location(button, file$5, 74, 16, 2154);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -3083,16 +2957,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block_1$2.name,
+    		id: create_else_block$2.name,
     		type: "else",
-    		source: "(76:12) {:else}",
+    		source: "(74:12) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (74:12) {#if complete}
+    // (72:12) {#if complete}
     function create_if_block_2$2(ctx) {
     	let button;
     	let button_transition;
@@ -3105,7 +2979,7 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Start Again";
     			attr_dev(button, "class", "is-primary button svelte-1688j5u");
-    			add_location(button, file$5, 74, 16, 2038);
+    			add_location(button, file$5, 72, 16, 2007);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -3144,14 +3018,80 @@ var app = (function () {
     		block,
     		id: create_if_block_2$2.name,
     		type: "if",
-    		source: "(74:12) {#if complete}",
+    		source: "(72:12) {#if complete}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (67:12) {#if complete}
+    // (65:4) {#if allInOneGo}
+    function create_if_block$3(ctx) {
+    	let if_block_anchor;
+    	let current;
+    	let if_block = /*complete*/ ctx[3] && create_if_block_1$2(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (/*complete*/ ctx[3]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+
+    					if (dirty & /*complete*/ 8) {
+    						transition_in(if_block, 1);
+    					}
+    				} else {
+    					if_block = create_if_block_1$2(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$3.name,
+    		type: "if",
+    		source: "(65:4) {#if allInOneGo}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (66:12) {#if complete}
     function create_if_block_1$2(ctx) {
     	let button;
     	let button_transition;
@@ -3164,7 +3104,7 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Start Again";
     			attr_dev(button, "class", "is-primary button svelte-1688j5u");
-    			add_location(button, file$5, 67, 16, 1801);
+    			add_location(button, file$5, 66, 16, 1804);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -3203,7 +3143,7 @@ var app = (function () {
     		block,
     		id: create_if_block_1$2.name,
     		type: "if",
-    		source: "(67:12) {#if complete}",
+    		source: "(66:12) {#if complete}",
     		ctx
     	});
 
@@ -3221,10 +3161,13 @@ var app = (function () {
     	let div2;
     	let stocksudoku;
     	let t2;
+    	let footer;
     	let current_block_type_index_1;
     	let if_block1;
+    	let t3;
+    	let p;
     	let current;
-    	const if_block_creators = [create_if_block_3, create_else_block_2$2];
+    	const if_block_creators = [create_if_block_3, create_else_block_1$2];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -3240,12 +3183,13 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	const if_block_creators_1 = [create_if_block$3, create_else_block$2];
+    	const if_block_creators_1 = [create_if_block$3, create_if_block_2$2, create_else_block$2];
     	const if_blocks_1 = [];
 
     	function select_block_type_1(ctx, dirty) {
     		if (/*allInOneGo*/ ctx[1]) return 0;
-    		return 1;
+    		if (/*complete*/ ctx[3]) return 1;
+    		return 2;
     	}
 
     	current_block_type_index_1 = select_block_type_1(ctx);
@@ -3262,21 +3206,30 @@ var app = (function () {
     			div2 = element("div");
     			create_component(stocksudoku.$$.fragment);
     			t2 = space();
+    			footer = element("footer");
     			if_block1.c();
+    			t3 = space();
+    			p = element("p");
+    			p.textContent = "Written By Joseph Glynn";
     			set_style(div0, "height", "10vh");
-    			add_location(div0, file$5, 50, 4, 1361);
-    			add_location(div1, file$5, 52, 4, 1399);
+    			add_location(div0, file$5, 50, 4, 1369);
+    			add_location(div1, file$5, 52, 4, 1407);
     			set_style(div2, "flex", "1");
     			set_style(div2, "display", "flex");
     			set_style(div2, "justify-content", "center");
     			set_style(div2, "align-items", "center");
     			set_style(div2, "flex-direction", "column");
-    			add_location(div2, file$5, 60, 4, 1564);
+    			add_location(div2, file$5, 60, 4, 1572);
+    			set_style(p, "position", "absolute");
+    			set_style(p, "right", "5px");
+    			set_style(p, "bottom", "1px");
+    			add_location(p, file$5, 77, 8, 2304);
+    			add_location(footer, file$5, 63, 4, 1731);
     			set_style(main, "display", "flex");
     			set_style(main, "flex-direction", "column");
     			set_style(main, "min-height", "100vh");
     			attr_dev(main, "class", "svelte-1688j5u");
-    			add_location(main, file$5, 48, 0, 1284);
+    			add_location(main, file$5, 48, 0, 1292);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3291,7 +3244,10 @@ var app = (function () {
     			append_dev(main, div2);
     			mount_component(stocksudoku, div2, null);
     			append_dev(main, t2);
-    			if_blocks_1[current_block_type_index_1].m(main, null);
+    			append_dev(main, footer);
+    			if_blocks_1[current_block_type_index_1].m(footer, null);
+    			append_dev(footer, t3);
+    			append_dev(footer, p);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
@@ -3343,7 +3299,7 @@ var app = (function () {
     				}
 
     				transition_in(if_block1, 1);
-    				if_block1.m(main, null);
+    				if_block1.m(footer, t3);
     			}
     		},
     		i: function intro(local) {
@@ -3547,7 +3503,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(solver.$$.fragment);
-    			add_location(div, file$6, 42, 2, 1041);
+    			add_location(div, file$6, 42, 2, 1045);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3614,7 +3570,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(inputsudoku.$$.fragment);
-    			add_location(div, file$6, 38, 2, 912);
+    			add_location(div, file$6, 38, 2, 916);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3677,7 +3633,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(choosesize.$$.fragment);
-    			add_location(div, file$6, 34, 2, 787);
+    			add_location(div, file$6, 34, 2, 791);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3736,7 +3692,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(welcome.$$.fragment);
-    			add_location(div, file$6, 29, 2, 669);
+    			add_location(div, file$6, 29, 2, 673);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3803,7 +3759,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			if (if_block) if_block.c();
-    			add_location(div, file$6, 27, 0, 624);
+    			add_location(div, file$6, 27, 0, 628);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

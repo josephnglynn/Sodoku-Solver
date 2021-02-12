@@ -38,6 +38,7 @@
 
     <footer>
         <button on:click={()=>verify()} class="is-primary button">Continue</button>
+        <p style="position: absolute; right: 5px; bottom: 1px;">Written By Joseph Glynn</p>
     </footer>
 
 </main>
