@@ -10,7 +10,7 @@ function isValid(state: Array<Array<number>>, row: number, col: number, k: numbe
 }
 
 
-export const bruteForce = (state: Array<Array<number>>, n: number): boolean => {
+const bruteForce = (state: Array<Array<number>>, n: number): boolean => {
     for (let i = 0; i < state.length; i++) {
         for (let j = 0; j < state.length; j++) {
             if (state[i][j] == 0) {
@@ -29,6 +29,11 @@ export const bruteForce = (state: Array<Array<number>>, n: number): boolean => {
         }
     }
     return true;
+}
+
+export const runBruteForceWrapper = (state: Array<Array<number>>, n: number): Array<Array<number>> => {
+    bruteForce(state, n);
+    return state;
 }
 
 
@@ -58,7 +63,9 @@ const constraintPropagation = (state: Array<Array<number>>, n: number) => {
         return;
     }
 
-
+    //No Strategy Worked
+    alert("This Sudoku Proved To Be To Difficult\nReverting To Brute Force");
+    bruteForce(state, n);
 }
 
 

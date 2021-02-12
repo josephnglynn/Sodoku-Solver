@@ -1,8 +1,9 @@
 <script lang="ts">
     import StockSudoku from "./StockSudoku.svelte";
     import {fly} from "svelte/transition"
-    import {solvePartOfSudoku, bruteForce} from "../api/solveSudoku";
+    import {runBruteForceWrapper, solvePartOfSudoku} from "../api/solveSudoku";
     import {Pages} from "../api/Pages";
+    import {onMount} from "svelte";
 
     export let state: Array<Array<number>> = [];
     export let allInOneGo: Boolean = true;
@@ -20,16 +21,21 @@
 
     let n: number = Math.sqrt(state.length)
 
-    if (allInOneGo) {
-        complete = bruteForce(state, n)
-    } else {
-        [state, complete] = solvePartOfSudoku(state, n);
-    }
+    onMount(async ()=>{
+        await setTimeout(()=>{}, 1000);
+        if (allInOneGo) {
+            state = runBruteForceWrapper(state, n);
+            complete = true;
+        } else {
+            [state, complete] = solvePartOfSudoku(state, n);
+        }
+    })
 
 
 </script>
 
-<main style="display: flex; flex-direction: column; min-height: 100vh">
+<main  style="display: flex; flex-direction: column; min-height: 100vh">
+
 
     <div style="height: 10vh"></div>
 
@@ -55,7 +61,7 @@
             {#if complete}
                 <button transition:fly on:click={()=>changePage(Pages.Welcome)} class="is-primary button">Start Again</button>
             {:else}
-                <button transition:fly on:click={()=>solvePartOfSudoku(state, n)} class="is-primary button">Next Step</button>
+                <button transition:fly on:click={()=>[state, complete] = solvePartOfSudoku(state, n)} class="is-primary button">Next Step</button>
             {/if}
     {/if}
         <p style="position: absolute; right: 5px; bottom: 1px;">Written By Joseph Glynn</p>
