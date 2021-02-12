@@ -23,7 +23,7 @@
     </div>
 
     <footer>
-        <button on:click={()=>alert("Sorry Not Implemented Yet\nPlease Try: \"All In One Go\"")} class="is-primary button" style="margin-right: 20px">Calculate Step By Step</button>
+        <button on:click={()=>onContinue(false)} class="is-primary button" style="margin-right: 20px">Calculate Step By Step</button>
         <button on:click={()=>onContinue(true)} class="is-primary button" style="margin-left: 20px">Calculate All In One Go</button>
         <p style="position: absolute; right: 5px; bottom: 1px;">Written By Joseph Glynn</p>
     </footer>

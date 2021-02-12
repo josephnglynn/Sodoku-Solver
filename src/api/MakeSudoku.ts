@@ -15,7 +15,7 @@ export const MakeSudoku = (n: number): Array<Array<number>> => {
             temp.push(0);
         }
         sudoku.push(temp);
-        options.push(i + 1)
+        options.push(i + 1);
     }
 
     for (let i = 0; i < actualLength; i++) {
@@ -30,7 +30,7 @@ export const MakeSudoku = (n: number): Array<Array<number>> => {
         if (i % n == 0) {
             sudoku[i] = pushArrayToTheLeft(1, sudoku[i - 1]);
         } else {
-            sudoku[i] = pushArrayToTheLeft(n, sudoku[i - 1])
+            sudoku[i] = pushArrayToTheLeft(n, sudoku[i - 1]);
         }
     }
 
@@ -51,22 +51,20 @@ const mixBlocksUp = (sudoku: Array<Array<number>>, n: number): Array<Array<numbe
         }
     }
 
-    const temp: Array<Array<number>> = col[0];
-    col[0] = col[1];
-    col[1] = temp;
+    [col[0], col[1]] = [col[1], col[0]];
 
-    return sudoku
+    return sudoku;
 }
 
 
 const pushArrayToTheLeft = (amount: number, array: Array<number>): Array<number> => {
     const pushedArray: Array<number> = [];
     for (let i = amount; i < array.length; i++) {
-        pushedArray.push(array[i])
+        pushedArray.push(array[i]);
     }
 
     for (let i = 0; i < amount; i++) {
-        pushedArray.push(array[i])
+        pushedArray.push(array[i]);
     }
 
     return pushedArray;

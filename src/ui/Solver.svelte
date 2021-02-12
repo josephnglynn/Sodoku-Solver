@@ -20,36 +20,10 @@
 
     let n: number = Math.sqrt(state.length)
 
-    /*let dots: number = 0;
-    let Calculating: string = "Calculating";
-
-    let startTime: number;
-    const updateBoard = (t) => {
-        if (startTime === undefined) {
-            startTime = t;
-        }
-        [state, complete] = solvePartOfSudoku(state, n);
-        const frameTime = (t - startTime) / 400;
-        if (dots < 1) {
-            Calculating = "Calculating .    ";
-            dots += frameTime;
-        } else if (dots < 2) {
-            Calculating = "Calculating . .  ";
-            dots += frameTime;
-        } else if (dots < 3) {
-            Calculating = "Calculating . . .";
-            dots += frameTime;
-        } else {
-            dots = 0;
-        }
-        startTime = t;
-        if (allInOneGo && !complete) {
-            requestAnimationFrame(updateBoard);
-        }
-    }*/
-
     if (allInOneGo) {
         complete = bruteForce(state, n)
+    } else {
+        [state, complete] = solvePartOfSudoku(state, n);
     }
 
 
@@ -81,7 +55,7 @@
             {#if complete}
                 <button transition:fly on:click={()=>changePage(Pages.Welcome)} class="is-primary button">Start Again</button>
             {:else}
-                <button transition:fly on:click={()=>console.log("not implemented")} class="is-primary button">Next Step</button>
+                <button transition:fly on:click={()=>solvePartOfSudoku(state, n)} class="is-primary button">Next Step</button>
             {/if}
     {/if}
         <p style="position: absolute; right: 5px; bottom: 1px;">Written By Joseph Glynn</p>

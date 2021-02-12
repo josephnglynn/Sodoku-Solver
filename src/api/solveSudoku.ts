@@ -11,8 +11,8 @@ function isValid(state: Array<Array<number>>, row: number, col: number, k: numbe
 
 
 export const bruteForce = (state: Array<Array<number>>, n: number): boolean => {
-    for (let i = 0; i < n*n; i++) {
-        for (let j = 0; j < n*n; j++) {
+    for (let i = 0; i < state.length; i++) {
+        for (let j = 0; j < state.length; j++) {
             if (state[i][j] == 0) {
                 for (let k = 1; k <= n*n; k++) {
                     if (isValid(state, i, j, k, n)) {
@@ -32,7 +32,7 @@ export const bruteForce = (state: Array<Array<number>>, n: number): boolean => {
 }
 
 
-const checkSudoku = (state: Array<Array<number>>, n: number):boolean => {
+const checkSudoku = (state: Array<Array<number>>):boolean => {
     for (let row = 0; row < state.length; row++) {
         for (let col = 0; col < state.length; col++) {
             if (state[row][col] == 0) {
@@ -45,31 +45,71 @@ const checkSudoku = (state: Array<Array<number>>, n: number):boolean => {
 
 
 export const solvePartOfSudoku = (state: Array<Array<number>>, n: number): [Array<Array<number>>, boolean] => { //need to return array for state change
-    return [state, checkSudoku(state, n)];
+    constraintPropagation(state, n);
+    return [state, checkSudoku(state)];
 }
-
-
 
 const constraintPropagation = (state: Array<Array<number>>, n: number) => {
-    checkRowsAndColumns(state, n)
-    for (let i = 0; i < state.length; i++) {
-        for (let k = 0; k < state.length; k++) {
-            if (state[i][k] != 0) {
-
-            }
-        }
+    let average: number = calculateAverage(n*n);
+    if (checkRows(state, average)) {
+        return;
     }
+    if (checkColumns(state, average)) {
+        return;
+    }
+
+
 }
 
 
-const checkRowsAndColumns = (state: Array<Array<number>>, n: number) => {
-    for (let i = 0; i < state.length; i++) {
-        let x = 0;
-        for (let k = 0; k < state.length; k++) {
-            x += state[i][k]
-        }
-        if (x == (n*n)*Math.round(n*n/2)) {
+const calculateAverage = (length: number) => {
+    let count: number = 0;
+    for (let i = 1; i <=length; i++) {
+        count += i;
+    }
+    return count;
+}
 
+const checkRows = (state: Array<Array<number>>, average: number): boolean => {
+    //annoying Ide not realizing difference in code;
+    // noinspection DuplicatedCode
+    for (let i = 0; i < state.length; i++) {
+        let count = 0;
+        let col = 0;
+        let onlyOneNumber: number = 0;
+        for (let k = 0; k < state.length; k++) {
+            count += state[i][k]
+            if (state[i][k] == 0) {
+                onlyOneNumber++;
+                col = k;
+            }
+        }
+        if (onlyOneNumber == 1) {
+            state[i][col] = average - count;
+            return true;
+        }
+    }
+    return false;
+}
+
+
+const checkColumns  = (state: Array<Array<number>>, average: number) => {
+    //annoying Ide not realizing difference in code;
+    // noinspection DuplicatedCode
+    for (let i = 0; i < state.length; i++) {
+        let count = 0;
+        let row = 0;
+        let onlyOneNumber: number = 0;
+        for (let k = 0; k < state.length; k++) {
+            count += state[k][i]
+            if (state[k][i] == 0) {
+                onlyOneNumber++;
+                row = i;
+            }
+        }
+        if (onlyOneNumber == 1) {
+            state[row][i] = average - count;
+            return true;
         }
     }
 }
