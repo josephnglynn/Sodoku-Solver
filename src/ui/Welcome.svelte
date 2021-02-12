@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {Pages} from "./Pages";
+    import {Pages} from "../api/Pages";
     export let changePage: (page: Pages)=>void;
 </script>
 
@@ -21,7 +21,6 @@
         <button on:click={()=>changePage(Pages.ChooseSize)} class="is-primary button"  >Continue</button>
         <p style="position: absolute; right: 0; bottom: 1px;">Written By Joseph Glynn</p>
     </footer>
-
 
 </main>
 

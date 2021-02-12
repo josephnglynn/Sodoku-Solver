@@ -1,8 +1,8 @@
 <script lang="ts">
     import StockSudoku from "./StockSudoku.svelte";
     import {fly} from "svelte/transition"
-    import {solvePartOfSudoku, bruteForce} from "./solveSudoku";
-    import {Pages} from "./Pages";
+    import {solvePartOfSudoku, bruteForce} from "../api/solveSudoku";
+    import {Pages} from "../api/Pages";
 
     export let state: Array<Array<number>> = [];
     export let allInOneGo: Boolean = true;

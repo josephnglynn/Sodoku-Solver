@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {Pages} from "./Pages";
+    import {Pages} from "../api/Pages";
     import Sudoku from "./Sudoku.svelte";
     export let length: number = 3;
     let state: Array<Array<number>> = [];

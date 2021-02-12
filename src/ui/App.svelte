@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Welcome from "./Welcome.svelte";
-	import {Pages} from "./Pages";
+	import {Pages} from "../api/Pages";
 	import ChooseSize from "./ChooseSize.svelte";
 	import {slide} from "svelte/transition"
 	import InputSudoku from "./InputSudoku.svelte";

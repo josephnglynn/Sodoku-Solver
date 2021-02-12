@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {Pages} from "./Pages";
+    import {Pages} from "../api/Pages";
     import StockSudoku from "./StockSudoku.svelte";
     import {slide} from "svelte/transition"
 
