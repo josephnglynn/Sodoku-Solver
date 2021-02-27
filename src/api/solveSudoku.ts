@@ -111,7 +111,7 @@ const checkColumns  = (state: Array<Array<number>>, average: number) => {
             count += state[k][i]
             if (state[k][i] == 0) {
                 onlyOneNumber++;
-                row = i;
+                row = k;
             }
         }
         if (onlyOneNumber == 1) {
@@ -119,5 +119,6 @@ const checkColumns  = (state: Array<Array<number>>, average: number) => {
             return true;
         }
     }
+    return false;
 }
 
