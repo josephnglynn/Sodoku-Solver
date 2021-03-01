@@ -56,10 +56,15 @@ export const solvePartOfSudoku = (state: Array<Array<number>>, n: number): [Arra
 
 const constraintPropagation = (state: Array<Array<number>>, n: number) => {
     let average: number = calculateAverage(n*n);
-    if (checkRows(state, average)) {
+    if (checkRowsForOneLeft(state, average)) {
         return;
     }
-    if (checkColumns(state, average)) {
+    
+    if (checkColumnsForOneLeft(state, average)) {
+        return;
+    }
+
+    if (checkSquares(state, n, average)) {
         return;
     }
 
@@ -77,8 +82,7 @@ const calculateAverage = (length: number) => {
     return count;
 }
 
-const checkRows = (state: Array<Array<number>>, average: number): boolean => {
-    //annoying Ide not realizing difference in code;
+const checkRowsForOneLeft = (state: Array<Array<number>>, average: number): boolean => {
     // noinspection DuplicatedCode
     for (let i = 0; i < state.length; i++) {
         let count = 0;
@@ -100,8 +104,7 @@ const checkRows = (state: Array<Array<number>>, average: number): boolean => {
 }
 
 
-const checkColumns  = (state: Array<Array<number>>, average: number) => {
-    //annoying Ide not realizing difference in code;
+const checkColumnsForOneLeft  = (state: Array<Array<number>>, average: number): Boolean => {
     // noinspection DuplicatedCode
     for (let i = 0; i < state.length; i++) {
         let count = 0;
@@ -122,3 +125,62 @@ const checkColumns  = (state: Array<Array<number>>, average: number) => {
     return false;
 }
 
+
+
+const checkSquares = (state: Array<Array<number>>, n: number, average: number): Boolean => {
+
+    
+    for (let i = 0; i < n; i++) {
+        let totalNumberOfZeros = 0;
+        let current = 0;
+        for (let k = (i*n); k < (i+1)*n; k++) {
+            for (let j = (i*n); j < (i+1)*n; j++) {
+                if(state[j][k] == 0) {
+                    totalNumberOfZeros++;
+                } else {
+                    current += state[j][k];
+                }
+            }
+        }
+        if (totalNumberOfZeros == 1) {
+            for (let k = (i*n); k < (i+1)*n; k++) {
+                for (let j = (i*n); j < (i+1)*n; j++) {
+                    if(state[j][k] == 0) {
+                        state[j][k] = average - current;
+                        return true;
+                    } 
+                }
+            }
+        }
+        
+    }
+
+    return false;
+}
+
+
+enum height {
+    Top,
+    Center,
+    Bottom,
+}
+
+enum width {
+    right,
+    center,
+    left
+}
+
+
+const checkLargerRows = (state: Array<Array<number>>, n: number): Boolean => {
+    //check each number through all rows
+    
+    for (let i = 0; i < n; i++) {
+        for (let k = (i*n); k < (i+1)*n; k++) {
+            for (let j = (i*n); j < (i+1)*n; j++) {
+                    
+            }
+        }
+    }
+    return false;
+}
