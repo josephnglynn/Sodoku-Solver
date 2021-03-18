@@ -69,4 +69,3 @@ button:focus {
 button:not(:disabled):active {
   background-color: #ddd;
 }
-
