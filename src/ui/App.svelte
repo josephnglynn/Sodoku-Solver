@@ -10,7 +10,7 @@
 	let state: Array<Array<number>> = [];
 	let allAtOnce: boolean = false;
 
-	let currentPage: Pages = Pages.Welcome;
+	let currentPage: Pages = Pages.ChooseSize;
 	let changePage = (page: Pages) => {
 		currentPage = page;
 	};
@@ -45,7 +45,7 @@
 		<div transition:slide>
 			<InputSudoku length={l} changePage={setToSolve}/>
 		</div>
-		{:else if currentPage === Pages.Solver}
+	{:else if currentPage === Pages.Solver}
 		<div transition:slide>
 			<Solver allInOneGo={allAtOnce} changePage={changePage} state={state}/>
 		</div>
