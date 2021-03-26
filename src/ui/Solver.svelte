@@ -1,7 +1,7 @@
 <script lang="ts">
     import StockSudoku from "./StockSudoku.svelte";
     import {fly} from "svelte/transition"
-    import {runBruteForceWrapper, solvePartOfSudoku} from "../api/solveSudoku";
+    import {solvePartOfSudoku} from "../api/solveSudoku";
     import {Pages} from "../api/Pages";
     import {onMount} from "svelte";
 
@@ -24,8 +24,10 @@
     onMount(async ()=>{
         await setTimeout(()=>{}, 1000);
         if (allInOneGo) {
-            state = runBruteForceWrapper(state, n);
-            complete = true;
+            [state, complete] = solvePartOfSudoku(state, n);
+            while (!complete) {
+                [state, complete] = solvePartOfSudoku(state, n);
+            }
         } else {
             [state, complete] = solvePartOfSudoku(state, n);
         }
