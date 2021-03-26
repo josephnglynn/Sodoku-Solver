@@ -31,11 +31,6 @@ const bruteForce = (state: Array<Array<number>>, n: number): boolean => {
     return true;
 }
 
-export const runBruteForceWrapper = (state: Array<Array<number>>, n: number): Array<Array<number>> => {
-    bruteForce(state, n);
-    return state;
-}
-
 
 const checkSudoku = (state: Array<Array<number>>):boolean => {
     for (let row = 0; row < state.length; row++) {
@@ -82,7 +77,7 @@ const calculateAverage = (length: number) => {
     return count;
 }
 
-const checkRowsForOneLeft = (state: Array<Array<number>>, average: number): boolean => {
+const checkRowsForOneLeft = (state: Array<Array<number>>, average: number): boolean => { //CHECKS TO SEE HOW MANY NUMBERS ARE LEFT IN A ROW - IF ONLY ONE THEN CAN FILL IN
     // noinspection DuplicatedCode
     for (let i = 0; i < state.length; i++) {
         let count = 0;
@@ -104,7 +99,7 @@ const checkRowsForOneLeft = (state: Array<Array<number>>, average: number): bool
 }
 
 
-const checkColumnsForOneLeft  = (state: Array<Array<number>>, average: number): Boolean => {
+const checkColumnsForOneLeft  = (state: Array<Array<number>>, average: number): Boolean => { //CHECKS TO SEE HOW MANY NUMBERS ARE LEFT IN A COLUMN - IF ONLY ONE THEN CAN FILL IN
     // noinspection DuplicatedCode
     for (let i = 0; i < state.length; i++) {
         let count = 0;
@@ -159,26 +154,38 @@ const checkSquares = (state: Array<Array<number>>, n: number, average: number): 
 }
 
 
-enum height {
-    Top,
-    Center,
-    Bottom,
-}
 
-enum width {
-    right,
-    center,
-    left
-}
 
 
 const checkLargerRows = (state: Array<Array<number>>, n: number): Boolean => {
     //check each number through all rows
     
     for (let i = 0; i < n; i++) {
+        /*
+        CHECKS ALL BIG COLUMNS - E.G:
+        [1 2] [3 4]
+        [3 4] [1 2]
+        [2 1] [4 3]
+        [4 3] [2 1]
+        IT WOULD CHECK THE COLUMN:
+        [1 2]
+        [3 4]
+        [2 1]
+        [4 3]
+         */
         for (let k = (i*n); k < (i+1)*n; k++) {
+            /*
+            (i*n) so we move to correct column
+            IN EXAMPLE ABOVE, ON SECOND ITERATION - (i*n) = (1*2) = 2
+            SO WE START ITERATING BETWEEN THE VALUES 2 AND 3 IN THE EXAMPLE ABOVE ( INDEXING STARTING AT 0 )
+            K IS THE COLUMN NUMBER
+             */
             for (let j = (i*n); j < (i+1)*n; j++) {
-                    
+                    /*
+                    HERE LIKE ABOVE WE DO (i*n)
+                    THIS TIME j IS THE ROW NUMBER
+                     */
+
             }
         }
     }
