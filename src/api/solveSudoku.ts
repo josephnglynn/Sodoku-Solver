@@ -43,18 +43,19 @@ const checkSudoku = (state: Array<Array<number>>):boolean => {
     return true;
 }
 
-
-export const solvePartOfSudoku = (state: Array<Array<number>>, n: number): [Array<Array<number>>, boolean] => { //need to return array for state change
-    constraintPropagation(state, n);
-    return [state, checkSudoku(state)];
+const bruteForceWrapper = (state: Array<Array<number>>, n: number):Array<Array<number>> => {
+    bruteForce(state, n)
+    return state;
 }
 
-const constraintPropagation = (state: Array<Array<number>>, n: number) => {
+
+export const solvePartOfSudoku = (state: Array<Array<number>>, n: number, setState: (s: Array<Array<number>>) => void, showMessage: (message: String, onAccept: Function, onCancel: Function) => void ): [Array<Array<number>>, boolean] => { //need to return array for state change
+
     let average: number = calculateAverage(n*n);
     if (checkRowsForOneLeft(state, average)) {
         return;
     }
-    
+
     if (checkColumnsForOneLeft(state, average)) {
         return;
     }
@@ -63,10 +64,16 @@ const constraintPropagation = (state: Array<Array<number>>, n: number) => {
         return;
     }
 
+    if (checkLargerRows(state, n)) {
+        return;
+    }
+
     //No Strategy Worked
-    alert("This Sudoku Proved To Be To Difficult\nReverting To Brute Force");
-    bruteForce(state, n);
+    showMessage("This Sudoku Proved To Be To Difficult\nReverting To Brute Force", ()=>setState(bruteForceWrapper(state, n)), ()=>{});
+
+    return [state, checkSudoku(state)];
 }
+
 
 
 const calculateAverage = (length: number) => {
@@ -185,7 +192,7 @@ const checkLargerRows = (state: Array<Array<number>>, n: number): Boolean => {
                     HERE LIKE ABOVE WE DO (i*n)
                     THIS TIME j IS THE ROW NUMBER
                      */
-
+                    console.log(`I: ${i}, K: ${k}, J: ${j}`);
             }
         }
     }

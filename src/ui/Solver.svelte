@@ -8,6 +8,7 @@
     export let state: Array<Array<number>> = [];
     export let allInOneGo: Boolean = true;
     export let changePage: (page: Pages) => void;
+    export let showMessage: (message: String, onAccept: Function, onCancel: Function) => void;
 
     let complete: boolean = false
 
@@ -19,17 +20,21 @@
         }
     }
 
+    const setStateOfSudoku = (s: Array<Array<number>>) => {
+        state = s;
+    }
+
     let n: number = Math.sqrt(state.length)
 
     onMount(async ()=>{
         await setTimeout(()=>{}, 1000);
         if (allInOneGo) {
-            [state, complete] = solvePartOfSudoku(state, n);
+            [state, complete] = solvePartOfSudoku(state, n, setStateOfSudoku, showMessage);
             while (!complete) {
-                [state, complete] = solvePartOfSudoku(state, n);
+                [state, complete] = solvePartOfSudoku(state, n, setStateOfSudoku, showMessage);
             }
         } else {
-            [state, complete] = solvePartOfSudoku(state, n);
+            [state, complete] = solvePartOfSudoku(state, n, setStateOfSudoku, showMessage);
         }
     })
 
@@ -63,7 +68,7 @@
             {#if complete}
                 <button transition:fly on:click={()=>changePage(Pages.Welcome)} class="is-primary button">Start Again</button>
             {:else}
-                <button transition:fly on:click={()=>[state, complete] = solvePartOfSudoku(state, n)} class="is-primary button">Next Step</button>
+                <button transition:fly on:click={()=>[state, complete] = solvePartOfSudoku(state, n, setStateOfSudoku, showMessage)} class="is-primary button">Next Step</button>
             {/if}
     {/if}
         <div style="display: flex; justify-content: flex-end">
