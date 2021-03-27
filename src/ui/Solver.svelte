@@ -36,7 +36,7 @@
 
 </script>
 
-<main  style="display: flex; flex-direction: column; min-height: 100vh">
+<main  style="display: flex; flex-direction: column; min-height: 100vh; min-width: 100vw">
 
 
     <div style="height: 10vh"></div>

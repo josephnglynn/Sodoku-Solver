@@ -15,7 +15,7 @@
     }
 </script>
 
-<main style="display: flex; flex-direction: column; min-height: 100vh">
+<main style="display: flex; flex-direction: column; min-height: 100vh; min-width: 100vw">
 
     <div style="height: 10vh"></div>
 
@@ -23,7 +23,7 @@
         <h1>Please Enter Sudoku Size</h1>
     </div>
 
-    <div style="flex: 1; display: flex; justify-content: center; align-items: center; flex-direction: column">
+    <div style="flex: 1; display: flex; justify-content: center; align-items: center; flex-direction: column; margin-bottom: 20px">
         <StockSudoku/>
         <h6>Example Of Size Of 3</h6>
         <label>

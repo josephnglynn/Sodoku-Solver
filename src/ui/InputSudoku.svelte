@@ -10,7 +10,7 @@
 
 </script>
 
-<main style="display: flex; flex-direction: column; min-height: 100vh">
+<main style="display: flex; flex-direction: column; min-height: 100vh; min-width: 100vw">
 
     <div style="height: 10vh"></div>
 
@@ -22,9 +22,9 @@
         <Sudoku length={length} bind:state={state}  />
     </div>
 
-    <footer>
-        <button on:click={()=>onContinue(false)} style="margin: 20px" class="is-primary button">Calculate Step By Step</button>
-        <button on:click={()=>onContinue(true)} style="margin: 20px" class="is-primary button" >Calculate All In One Go</button>
+    <footer style="margin-top: 40px">
+        <button on:click={()=>onContinue(false)} class="is-primary button">Calculate Step By Step</button>
+        <button on:click={()=>onContinue(true)}  class="is-primary button" >Calculate All In One Go</button>
         <div style="display: flex; justify-content: flex-end">
             <p>Written By Joseph Glynn</p>
         </div>
