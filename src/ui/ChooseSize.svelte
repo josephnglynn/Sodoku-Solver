@@ -16,7 +16,7 @@
         if (size <= 1) {
             error = Problem.TO_SMALL;
 
-        } else if (size >= 5) {
+        } else if (size >= 5 && error != Problem.TO_BIG) {
             error = Problem.TO_BIG
         } else {
             changePage(Pages.SetSudoku, size);
@@ -41,6 +41,10 @@
         {#if error === Problem.TO_SMALL}
             <div transition:slide>
                 <h6 class="is-danger" style="color: red">Error: Must Be Greater Than 1</h6>
+            </div>
+        {:else if error === Problem.TO_BIG}
+            <div transition:slide>
+                <h6 class="is-warning" style="color: red">Warning: Are You Sure You Want It To Be This Size. If So Press Continue Button Again</h6>
             </div>
         {/if}
     </div>
