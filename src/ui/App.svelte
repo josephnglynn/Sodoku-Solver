@@ -7,7 +7,7 @@
     import Solver from "./Solver.svelte"
     import Message from "./Message.svelte"
 
-    let l: number = 3
+    let l: number = 0
     let state: Array<Array<number>> = []
     let allAtOnce: boolean = false
 

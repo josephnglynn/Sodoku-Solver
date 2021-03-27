@@ -4,20 +4,23 @@
     import {slide} from "svelte/transition"
 
     export let changePage: (page: Pages, length: number) => void;
-    let size: number;
+    let size: number = null;
 
     enum Problem {
         TO_BIG,
-        TO_SMALL
+        TO_SMALL,
+        NULL
     }
 
     let error: Problem = null;
     const verify = () => {
-        if (size <= 1) {
-            error = Problem.TO_SMALL;
-
+        console.log(size)
+        if (size == null) {
+            error = Problem.NULL
         } else if (size >= 5 && error != Problem.TO_BIG) {
             error = Problem.TO_BIG
+        } else if (size <= 1) {
+            error = Problem.TO_SMALL
         } else {
             changePage(Pages.SetSudoku, size);
         }
@@ -45,6 +48,10 @@
         {:else if error === Problem.TO_BIG}
             <div transition:slide>
                 <h6 class="is-warning" style="color: red">Warning: Are You Sure You Want It To Be This Size. If So Press Continue Button Again</h6>
+            </div>
+        {:else if error === Problem.NULL}
+            <div transition:slide>
+                <h6 class="is-warning" style="color: red">Warning: This Field Can't Be Empty</h6>
             </div>
         {/if}
     </div>

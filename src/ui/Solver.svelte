@@ -1,6 +1,6 @@
 <script lang="ts">
     import StockSudoku from "./StockSudoku.svelte";
-    import {fly} from "svelte/transition"
+    import {fly, blur} from "svelte/transition"
     import {solvePartOfSudoku} from "../api/solveSudoku";
     import {Pages} from "../api/Pages";
     import {onMount} from "svelte";
@@ -22,16 +22,17 @@
 
     const setStateOfSudoku = (s: Array<Array<number>>) => {
         state = s;
+        complete = true; //WE KNOW IT IS COMPLETE AS THIS FUNCTION IS ONLY CALLED WHEN THE BRUTE FORCE HAS ENDED
     }
 
-    let n: number = Math.sqrt(state.length)
+    let n: number = Math.sqrt(state.length) //GET LENGTH
 
     onMount(async ()=>{
         await setTimeout(()=>{}, 1000);
         if (allInOneGo) {
-            [state, complete] = solvePartOfSudoku(state, n, setStateOfSudoku, showMessage);
+            [state, complete] = solvePartOfSudoku(state, n, setStateOfSudoku, null);
             while (!complete) {
-                [state, complete] = solvePartOfSudoku(state, n, setStateOfSudoku, showMessage);
+                [state, complete] = solvePartOfSudoku(state, n, setStateOfSudoku, null);
             }
         } else {
             [state, complete] = solvePartOfSudoku(state, n, setStateOfSudoku, showMessage);
@@ -48,7 +49,7 @@
 
     <div>
         {#if complete}
-            <h1 transition:fly>Finished!</h1>
+            <h1 transition:blur>Finished!</h1>
         {:else }
             <h1>{"Calculating . . ."}</h1>
         {/if}
