@@ -23,8 +23,10 @@
     </div>
 
     <footer style="margin-top: 40px">
-        <button on:click={()=>onContinue(false)} class="is-primary button">Calculate Step By Step</button>
-        <button on:click={()=>onContinue(true)}  class="is-primary button" >Calculate All In One Go</button>
+        <div style="display: flex; flex-direction: unset; justify-content: center; flex-wrap: wrap">
+            <button on:click={()=>onContinue(false)} style="margin: 15px" class="is-primary button">Calculate Step By Step</button>
+            <button on:click={()=>onContinue(true)} style="margin: 15px" class="is-primary button" >Calculate All In One Go</button>
+        </div>
         <div style="display: flex; justify-content: flex-end">
             <p>Written By Joseph Glynn</p>
         </div>
