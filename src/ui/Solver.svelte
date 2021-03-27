@@ -66,7 +66,9 @@
                 <button transition:fly on:click={()=>[state, complete] = solvePartOfSudoku(state, n)} class="is-primary button">Next Step</button>
             {/if}
     {/if}
-        <p style="position: absolute; right: 5px; bottom: 1px;">Written By Joseph Glynn</p>
+        <div style="display: flex; justify-content: flex-end">
+            <p>Written By Joseph Glynn</p>
+        </div>
     </footer>
 </main>
 

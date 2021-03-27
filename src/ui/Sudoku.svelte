@@ -40,21 +40,13 @@
 
 <style>
 
-
-
-
-    :root {
-        --test: 4
-    }
-
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
+    input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
     }
 
     table {
-        margin: 1em auto;
+        margin: 0;
     }
 
     td {

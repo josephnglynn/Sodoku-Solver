@@ -19,7 +19,9 @@
 
     <footer>
         <button on:click={()=>changePage(Pages.ChooseSize)} class="is-primary button"  >Continue</button>
-        <p style="position: absolute; right: 5px; bottom: 1px;">Written By Joseph Glynn</p>
+        <div style="display: flex; justify-content: flex-end">
+            <p>Written By Joseph Glynn</p>
+        </div>
     </footer>
 
 </main>

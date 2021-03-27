@@ -23,9 +23,11 @@
     </div>
 
     <footer>
-        <button on:click={()=>onContinue(false)} class="is-primary button" style="margin-right: 20px">Calculate Step By Step</button>
-        <button on:click={()=>onContinue(true)} class="is-primary button" style="margin-left: 20px">Calculate All In One Go</button>
-        <p style="position: absolute; right: 5px; bottom: 1px;">Written By Joseph Glynn</p>
+        <button on:click={()=>onContinue(false)} style="margin: 20px" class="is-primary button">Calculate Step By Step</button>
+        <button on:click={()=>onContinue(true)} style="margin: 20px" class="is-primary button" >Calculate All In One Go</button>
+        <div style="display: flex; justify-content: flex-end">
+            <p>Written By Joseph Glynn</p>
+        </div>
     </footer>
 
 </main>
