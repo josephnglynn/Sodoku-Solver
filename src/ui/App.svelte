@@ -10,7 +10,7 @@
 	let state: Array<Array<number>> = [];
 	let allAtOnce: boolean = false;
 
-	let currentPage: Pages = Pages.ChooseSize;
+	let currentPage: Pages = Pages.Welcome;
 	let changePage = (page: Pages) => {
 		currentPage = page;
 	};
