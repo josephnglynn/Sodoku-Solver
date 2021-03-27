@@ -5,12 +5,21 @@
 
     export let changePage: (page: Pages, length: number) => void;
     let size: number;
-    let error: boolean = false;
+
+    enum Problem {
+        TO_BIG,
+        TO_SMALL
+    }
+
+    let error: Problem = null;
     const verify = () => {
-        if (size > 1) {
-            changePage(Pages.SetSudoku, size);
+        if (size <= 1) {
+            error = Problem.TO_SMALL;
+
+        } else if (size >= 5) {
+            error = Problem.TO_BIG
         } else {
-            error = true;
+            changePage(Pages.SetSudoku, size);
         }
     }
 </script>
@@ -29,7 +38,7 @@
         <label>
             <input type="number" bind:value={size}>
         </label>
-        {#if error}
+        {#if error === Problem.TO_SMALL}
             <div transition:slide>
                 <h6 class="is-danger" style="color: red">Error: Must Be Greater Than 1</h6>
             </div>
