@@ -10,6 +10,7 @@
     export let changePage: (page: Pages) => void;
     export let showMessage: (message: String, onAccept: Function, onCancel: Function) => void;
 
+
     let complete: boolean = false
 
     for(let i = 0; i < state.length; i++) {
@@ -28,9 +29,8 @@
     let n: number = Math.sqrt(state.length) //GET LENGTH
 
     onMount(async ()=>{
-        await setTimeout(()=>{}, 1000);
         if (allInOneGo) {
-            [state, complete] = solvePartOfSudoku(state, n, setStateOfSudoku, null);
+                [state, complete] = solvePartOfSudoku(state, n, setStateOfSudoku, null);
             while (!complete) {
                 [state, complete] = solvePartOfSudoku(state, n, setStateOfSudoku, null);
             }
