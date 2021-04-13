@@ -165,14 +165,6 @@ const checkSquares = (state: Array<Array<number>>, n: number, average: number): 
 
 
 const checkLargerRows = (state: Array<Array<number>>, n: number): Boolean => {
-    //Possible Values Of Numbers
-    let speculativeState: Array<Array<Array<number>>> = new Array<Array<Array<number>>>(n*n);
-    for (let i = 0; i < state.length; i++) {
-        speculativeState[i] = new Array<Array<number>>(n*n);
-        for (let k = 0; k < state.length; k++) {
-            speculativeState[i][k] = new Array<number>();
-        }
-    }
 
     let totalPossibility: Array<number> = [];
 
@@ -180,46 +172,42 @@ const checkLargerRows = (state: Array<Array<number>>, n: number): Boolean => {
         totalPossibility.push(i);
     }
 
-    //Fill up speculativeState with Numbers We know for sure And Fill Up Others With any possible value, correct or not
-    for (let i = 0; i < state.length; i++) { //Row
-        let unUsedNumbers: Array<number> = totalPossibility;
-        for (let k = 0; k < state.length; k++) { //Column
-            if (state[i][k] != 0) {
-                speculativeState[i][k] = [state[i][k]]; //Now We Know Squares With Known Numbers Have Length Of 1
-                unUsedNumbers.filter(((value, index, array) => value != state[i][k]));
-            }
-        }
+
+    //Possible Values Of Numbers
+    let speculativeState: Array<Array<Array<number>>> = new Array<Array<Array<number>>>(n*n);
+    for (let i = 0; i < state.length; i++) {
+        speculativeState[i] = new Array<Array<number>>(n*n);
         for (let k = 0; k < state.length; k++) {
+
             if (state[i][k] == 0) {
-                speculativeState[i][k] = unUsedNumbers; //We Fill It Up With Numbers Which We Know Are Possibilities
+                speculativeState[i][k] = totalPossibility; //We Fill It Up With Numbers Which We Know Are Possibilities
+            } else {
+                speculativeState[i][k] = [state[i][k]];
+            }
+
+        }
+    }
+
+
+
+    //SET WHERE NUMBER CANNOT GO
+    for (let column = 0; column < state.length; column++) {
+        for (let row = 0; row < state.length; row++) {
+            if (speculativeState[column][row].length == 1) {
+                for (let i = 0; i < state.length; i++) {
+                    if (speculativeState[column][i].length != 1) {
+                        speculativeState[column][i] = speculativeState[column][i].filter(value => value != speculativeState[column][row][0]);
+                    }
+                    if (speculativeState[row][i].length  != 1) {
+                        speculativeState[row][i] = speculativeState[row][i].filter((value => value != speculativeState[column][row][0]))
+                    }
+                }
             }
         }
     }
 
-    for (let k = 0; k < state.length; k++) { //Column
-        let unUsedNumbers: Array<number> = totalPossibility;
-        for (let i = 0; i < state.length; i++) { //Row
-            if (state[i][k] != 0) {
-                speculativeState[i][k] = [state[i][k]]; //Now We Know Squares With Known Numbers Have Length Of 1
-                unUsedNumbers.filter(((value, index, array) => value != state[i][k]));
-            }
-        }
-        for (let i = 0; i < state.length; i++) {
-            let newValue: Array<number> = [];
-            speculativeState[i][k].forEach(value => {
-                let inBoth: Boolean = false;
-                unUsedNumbers.forEach(value1 => {
-                    if (value == value1) {
-                        inBoth = true;
-                    }
-                });
-                if (inBoth) {
-                    newValue.push(value);
-                }
-            });
-            speculativeState[i][k] = newValue;
-        }
-    }
+
+
 
     let areTheSame: Boolean = true;
 
@@ -237,6 +225,8 @@ const checkLargerRows = (state: Array<Array<number>>, n: number): Boolean => {
             }
         }
     }
+
+
 
     if (!areTheSame) {
         console.log("NOT THE SAME");
