@@ -6,7 +6,7 @@
     export let changePage: (page: Pages, State: Array<Array<number>>, allInOne: boolean) => void;
 
     let state: Array<Array<number>> = [];
-    let onContinue = (allInOne: boolean) => {
+    const onContinue = (allInOne: boolean) => {
         changePage(Pages.Solver, state, allInOne);
     }
 
