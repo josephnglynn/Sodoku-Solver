@@ -1,9 +1,11 @@
 <script lang="ts">
     import {Pages} from "../api/Pages";
     import Sudoku from "./Sudoku.svelte";
+
     export let length: number = 3;
-    let state: Array<Array<number>> = [];
     export let changePage: (page: Pages, State: Array<Array<number>>, allInOne: boolean) => void;
+
+    let state: Array<Array<number>> = [];
     let onContinue = (allInOne: boolean) => {
         changePage(Pages.Solver, state, allInOne);
     }
