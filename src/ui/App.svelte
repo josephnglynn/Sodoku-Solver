@@ -59,7 +59,7 @@
         </div>
     {:else if currentPage === Pages.SetSudoku}
         <div transition:slide>
-            <InputSudoku length={l} changePage={setToSolve}/>
+            <InputSudoku length={l} changePage={setToSolve} showMessage={showMessage}/>
         </div>
     {:else if currentPage === Pages.Solver}
         <div transition:slide>
