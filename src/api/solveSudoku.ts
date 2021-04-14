@@ -1,4 +1,4 @@
-function isValid(state: Array<Array<number>>, row: number, col: number, k: number, n: number) {
+const isValidSudoku = (state: Array<Array<number>>, row: number, col: number, k: number, n: number): Boolean => {
     for (let i = 0; i < n * n; i++) {
         const q = n * Math.floor(row / n) + Math.floor(i / n);
         const p = n * Math.floor(col / n) + i % n;
@@ -15,7 +15,7 @@ const bruteForce = (state: Array<Array<number>>, n: number): boolean => {
         for (let j = 0; j < state.length; j++) {
             if (state[i][j] == 0) {
                 for (let k = 1; k <= n * n; k++) {
-                    if (isValid(state, i, j, k, n)) {
+                    if (isValidSudoku(state, i, j, k, n)) {
                         state[i][j] = k;
                         if (bruteForce(state, n)) {
                             return true;
@@ -221,11 +221,10 @@ const checkLargerRows = (state: Array<Array<number>>, n: number): Boolean => {
                 }
             }
 
-            //Now We Know What Numbers Are Done, We Can Safly remove them
+            //Now We Know What Numbers Are Done, We Can Safely remove them
             for (let smallColumn = bigColumn; smallColumn < bigColumn+n; smallColumn++) {
                 for (let smallRow = bigRow; smallRow < bigRow+n; smallRow++) {
                     if (speculativeState[smallColumn][smallRow].length > 1) {
-                        let before = speculativeState[smallColumn][smallRow].length;
                         speculativeState[smallColumn][smallRow] = speculativeState[smallColumn][smallRow].filter((value => {
                             for (let i = 0; i < doneNumbers.length; i++) {
                                 if (value == doneNumbers[i]) {

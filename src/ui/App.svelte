@@ -12,16 +12,16 @@
     let allAtOnce: boolean = false
 
     let currentPage: Pages = Pages.Welcome;
-    let changePage = (page: Pages) => {
+    const changePage = (page: Pages) => {
         currentPage = page
     };
 
-    let setToInputSudoku = (page: Pages, length: number) => {
+    const setToInputSudoku = (page: Pages, length: number) => {
         l = length;
         currentPage = page;
     };
 
-    let setToSolve = (page: Pages, State: Array<Array<number>>, allInOne: boolean) => {
+    const setToSolve = (page: Pages, State: Array<Array<number>>, allInOne: boolean) => {
         state = State;
         allAtOnce = allInOne;
         currentPage = page;
@@ -59,7 +59,7 @@
         </div>
     {:else if currentPage === Pages.SetSudoku}
         <div transition:slide>
-            <InputSudoku length={l} changePage={setToSolve}/>
+            <InputSudoku length={l} changePage={setToSolve} showMessage={showMessage}/>
         </div>
     {:else if currentPage === Pages.Solver}
         <div transition:slide>

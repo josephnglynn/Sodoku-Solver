@@ -1,13 +1,40 @@
 <script lang="ts">
     import {Pages} from "../api/Pages";
     import Sudoku from "./Sudoku.svelte";
+
     export let length: number = 3;
-    let state: Array<Array<number>> = [];
     export let changePage: (page: Pages, State: Array<Array<number>>, allInOne: boolean) => void;
-    let onContinue = (allInOne: boolean) => {
-        changePage(Pages.Solver, state, allInOne);
+    export let showMessage: (message: String, onAccept: Function, onCancel: Function) => void;
+
+    let state: Array<Array<number>> = [];
+
+    const checkIfSudokuIsValid = (): Boolean => {
+        //Check for wrong Numbers
+        for (let i = 0; i < state.length; i++) {
+            for (let k = 0; k < state.length; k++) {
+                if (state[i][k] != null) {
+                    if (state[i][k] <= 0 || state[i][k] > state.length) {
+                        return false;
+                    }
+
+                }
+            }
+        }
+
+        //We don't do anything else as they will soon now if its wrong
+
+        return true;
     }
 
+    const onContinue = (allInOne: boolean) => {
+        if (!checkIfSudokuIsValid()) {
+            showMessage("The sudoku is invalid", () => {
+            }, () => {
+            });
+            return;
+        }
+        changePage(Pages.Solver, state, allInOne);
+    }
 
 
 </script>
@@ -21,13 +48,17 @@
     </div>
 
     <div style="flex: 1; display: flex; justify-content: center; align-items: center; flex-direction: column">
-        <Sudoku length={length} bind:state={state}  />
+        <Sudoku length={length} bind:state={state}/>
     </div>
 
     <footer style="margin-top: 40px">
         <div style="display: flex; flex-direction: unset; justify-content: center; flex-wrap: wrap">
-            <button on:click={()=>onContinue(false)} style="margin: 15px" class="is-primary button">Calculate Step By Step</button>
-            <button on:click={()=>onContinue(true)} style="margin: 15px" class="is-primary button" >Calculate All In One Go</button>
+            <button on:click={()=>onContinue(false)} style="margin: 15px" class="is-primary button">Calculate Step By
+                Step
+            </button>
+            <button on:click={()=>onContinue(true)} style="margin: 15px" class="is-primary button">Calculate All In One
+                Go
+            </button>
         </div>
         <div style="display: flex; justify-content: flex-end">
             <p>Written By Joseph Glynn</p>
