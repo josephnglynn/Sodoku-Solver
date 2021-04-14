@@ -53,23 +53,20 @@ export const solvePartOfSudoku = (state: Array<Array<number>>, n: number, setSta
 
     let average: number = calculateAverage(n * n);
     if (checkRowsForOneLeft(state, average)) {
-        return [state, false];
+        return [state, checkSudoku(state)];
     }
 
     if (checkColumnsForOneLeft(state, average)) {
-        return [state, false];
+        return [state, checkSudoku(state)];
     }
 
     if (checkSquares(state, n, average)) {
-        return [state, false];
+        return [state, checkSudoku(state)];
     }
 
     if (checkLargerRows(state, n)) {
-
-        return [state, false];
+        return [state, checkSudoku(state)];
     }
-
-    console.log("MESSAGE IS THE PROBLEM")
 
     //No Strategy Worked
     if (showMessage == null) {
@@ -210,10 +207,6 @@ const checkLargerRows = (state: Array<Array<number>>, n: number): Boolean => {
         }
     }
 
-    //TODO NOW WE HAVE TO GO THROUGH EACH SQUARE
-
-
-
     for (let bigColumn = 0; bigColumn < state.length; bigColumn+=n) {
         for (let bigRow = 0;  bigRow < state.length;  bigRow+=n) {
             //So Now We Have The Top Left Corner Of Each Square.
@@ -241,9 +234,6 @@ const checkLargerRows = (state: Array<Array<number>>, n: number): Boolean => {
                             }
                             return true;
                         }))
-                        if (before > speculativeState[smallColumn][smallRow].length) {
-                            console.log("SUCCESS");
-                        }
                     }
                 }
             }
@@ -251,23 +241,16 @@ const checkLargerRows = (state: Array<Array<number>>, n: number): Boolean => {
     }
 
 
-    let areTheSame: Boolean = true;
-
     for (let i = 0; i < state.length; i++) { //Row
         for (let k = 0; k < state.length; k++) { //Column
             if (speculativeState[i][k].length == 1) {
+                if (state[i][k] == 0) {
+                    state[i][k] = speculativeState[i][k][0];
+                    return true;
+                }
                 state[i][k] = speculativeState[i][k][0];
-                areTheSame = false;
             }
         }
-    }
-
-    console.log(speculativeState)
-
-
-    if (!areTheSame) {
-        console.log("NOT THE SAME");
-        return true;
     }
 
     return false;
