@@ -14,7 +14,6 @@
 
     let error: Problem = null;
     const verify = () => {
-        console.log(size)
         if (size == null) {
             error = Problem.NULL
         } else if (size >= 5 && error != Problem.TO_BIG) {
