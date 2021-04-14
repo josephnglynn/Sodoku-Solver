@@ -1,4 +1,4 @@
-function isValid(state: Array<Array<number>>, row: number, col: number, k: number, n: number) {
+export const isValidSudoku = (state: Array<Array<number>>, row: number, col: number, k: number, n: number): Boolean => {
     for (let i = 0; i < n * n; i++) {
         const q = n * Math.floor(row / n) + Math.floor(i / n);
         const p = n * Math.floor(col / n) + i % n;
@@ -15,7 +15,7 @@ const bruteForce = (state: Array<Array<number>>, n: number): boolean => {
         for (let j = 0; j < state.length; j++) {
             if (state[i][j] == 0) {
                 for (let k = 1; k <= n * n; k++) {
-                    if (isValid(state, i, j, k, n)) {
+                    if (isValidSudoku(state, i, j, k, n)) {
                         state[i][j] = k;
                         if (bruteForce(state, n)) {
                             return true;
