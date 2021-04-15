@@ -69,7 +69,7 @@ export const solvePartOfSudoku = (state: Array<Array<number>>, n: number, setSta
     }
 
     //No Strategy Worked
-    if (showMessage == null) {
+    if (showMessage == null && !checkSudoku(state)) {
         bruteForceWrapper(state, n)
     } else {
         showMessage("This Sudoku Proved To Be To Difficult\nReverting To Brute Force", () => setState(bruteForceWrapper(state, n)), () => {
