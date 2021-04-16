@@ -16,9 +16,9 @@
             <tr style="border-bottom: solid">
                 {#each sub as s, i}
                     {#if (i + 1) % length === 0}
-                        <td style="border-right: solid"><input type="number" bind:value={state[x][i]} style="width: 35px"></td>
+                        <td style="border-right: solid"><input type="number" required bind:value={state[x][i]} style="width: 35px"></td>
                     {:else}
-                        <td><input type="number" bind:value={state[x][i]} style="width: 35px"></td>
+                        <td><input type="number" required bind:value={state[x][i]} style="width: 35px"></td>
                     {/if}
                 {/each}
             </tr>
@@ -26,9 +26,9 @@
             <tr>
                 {#each sub as s, i}
                     {#if (i + 1) % length === 0}
-                        <td style="border-right: solid"><input type="number" bind:value={state[x][i]} style="width: 35px"></td>
+                        <td style="border-right: solid"><input type="number" required bind:value={state[x][i]} style="width: 35px"></td>
                     {:else}
-                        <td><input type="number" bind:value={state[x][i]} style="width: 35px"></td>
+                        <td><input type="number" required bind:value={state[x][i]} style="width: 35px"></td>
                     {/if}
                 {/each}
             </tr>
@@ -65,4 +65,8 @@
         border-top: solid;
     }
 
+    input {
+        margin: 0;
+        border: 0;
+    }
 </style>

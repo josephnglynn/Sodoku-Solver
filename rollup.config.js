@@ -55,7 +55,7 @@ export default {
 			contentBase: path.join(__dirname, "public"),
 			historyApiFallback: false,
 			host: "localhost",
-			port: 8080,
+			port: 8081,
 		}),
 
 		// Watch the `public` directory and refresh the

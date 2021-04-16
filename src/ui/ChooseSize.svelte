@@ -28,15 +28,13 @@
 
 <main style="display: flex; flex-direction: column; min-height: 100vh; min-width: 100vw">
 
-    <div style="height: 10vh"></div>
-
     <div>
         <h1>Please Enter Sudoku Size</h1>
     </div>
 
     <div style="flex: 1; display: flex; justify-content: center; align-items: center; flex-direction: column; margin-bottom: 20px">
         <StockSudoku/>
-        <h6>Example Of Size Of 3</h6>
+        <h4>Example Of Size Of 3</h4>
         <label>
             <input type="number" bind:value={size}>
         </label>
@@ -84,9 +82,10 @@
         font-weight: 100;
     }
 
-    @media (min-width: 640px) {
-        main {
-            max-width: none;
+    @media (max-width: 480px) {
+        button {
+            width: 80vw
         }
     }
+
 </style>

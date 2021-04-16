@@ -45,8 +45,6 @@
 <main  style="display: flex; flex-direction: column; min-height: 100vh; min-width: 100vw">
 
 
-    <div style="height: 10vh"></div>
-
     <div>
         {#if complete}
             <h1 transition:blur>Finished!</h1>
@@ -102,9 +100,9 @@
         font-weight: 100;
     }
 
-    @media (min-width: 640px) {
-        main {
-            max-width: none;
+    @media (max-width: 480px) {
+        button {
+            width: 80vw
         }
     }
 </style>

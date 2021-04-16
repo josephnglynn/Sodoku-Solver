@@ -73,3 +73,4 @@
         <Message text={message_text} onAccept={message_onAccept} onCancel={message_onCancel} clearMessage={clearMessage}/>
     </div>
 {/if}
+
