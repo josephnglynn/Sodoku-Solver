@@ -1,8 +1,8 @@
 <script lang="ts">
-    export let text: String;
-    export let onAccept: Function;
-    export let onCancel: Function;
-    export let clearMessage: Function;
+    export let text: String
+    export let onAccept: Function
+    export let onCancel: Function
+    export let clearMessage: Function
 </script>
 
 

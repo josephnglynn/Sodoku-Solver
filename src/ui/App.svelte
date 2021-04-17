@@ -17,31 +17,31 @@
     };
 
     const setToInputSudoku = (page: Pages, length: number) => {
-        l = length;
-        currentPage = page;
+        l = length
+        currentPage = page
     };
 
     const setToSolve = (page: Pages, State: Array<Array<number>>, allInOne: boolean) => {
-        state = State;
-        allAtOnce = allInOne;
-        currentPage = page;
+        state = State
+        allAtOnce = allInOne
+        currentPage = page
     };
 
-    let message_text = null;
-    let message_onAccept = null;
-    let message_onCancel = null;
+    let message_text = null
+    let message_onAccept = null
+    let message_onCancel = null
 
     const showMessage = (text: String, onAccept: Function, onCancel: Function) => {
         console.log(`DISPLAYING MESSAGE: ${text}`)
-        message_text = text;
-        message_onAccept = onAccept;
-        message_onCancel = onCancel;
+        message_text = text
+        message_onAccept = onAccept
+        message_onCancel = onCancel
     }
 
     const clearMessage = () => {
-        message_text = null;
-        message_onAccept = null;
-        message_onCancel = null;
+        message_text = null
+        message_onAccept = null
+        message_onCancel = null
         console.log("CLEARED MESSAGES")
     }
 </script>

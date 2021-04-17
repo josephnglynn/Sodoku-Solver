@@ -1,7 +1,7 @@
 <script lang="ts">
-    import {MakeSudoku} from "../api/MakeSudoku";
-    export let state: Array<Array<number>> = MakeSudoku(3);
-    let l: number = Math.sqrt(state.length);
+    import {MakeSudoku} from "../api/MakeSudoku"
+    export let state: Array<Array<number>> = MakeSudoku(3)
+    let l: number = Math.sqrt(state.length)
 </script>
 
 

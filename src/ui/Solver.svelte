@@ -1,14 +1,14 @@
 <script lang="ts">
-    import StockSudoku from "./StockSudoku.svelte";
+    import StockSudoku from "./StockSudoku.svelte"
     import {fly, blur} from "svelte/transition"
-    import {solvePartOfSudoku} from "../api/solveSudoku";
-    import {Pages} from "../api/Pages";
-    import {onMount} from "svelte";
+    import {solvePartOfSudoku} from "../api/solveSudoku"
+    import {Pages} from "../api/Pages"
+    import {onMount} from "svelte"
 
-    export let state: Array<Array<number>> = [];
-    export let allInOneGo: Boolean = true;
-    export let changePage: (page: Pages) => void;
-    export let showMessage: (message: String, onAccept: Function, onCancel: Function) => void;
+    export let state: Array<Array<number>> = []
+    export let allInOneGo: Boolean = true
+    export let changePage: (page: Pages) => void
+    export let showMessage: (message: String, onAccept: Function, onCancel: Function) => void
 
 
     let complete: boolean = false
@@ -16,26 +16,26 @@
     for(let i = 0; i < state.length; i++) {
         for (let k = 0; k < state[i].length; k++) {
             if (state[i][k] == null) {
-                state[i][k] = 0;
+                state[i][k] = 0
             }
         }
     }
 
     const setStateOfSudoku = (s: Array<Array<number>>) => {
-        state = s;
-        complete = true; //WE KNOW IT IS COMPLETE AS THIS FUNCTION IS ONLY CALLED WHEN THE BRUTE FORCE HAS ENDED
+        state = s
+        complete = true //WE KNOW IT IS COMPLETE AS THIS FUNCTION IS ONLY CALLED WHEN THE BRUTE FORCE HAS ENDED
     }
 
     let n: number = Math.sqrt(state.length) //GET LENGTH
 
     onMount(async ()=>{
         if (allInOneGo) {
-                [state, complete] = solvePartOfSudoku(state, n, setStateOfSudoku, null);
+                [state, complete] = solvePartOfSudoku(state, n, setStateOfSudoku, null)
             while (!complete) {
-                [state, complete] = solvePartOfSudoku(state, n, setStateOfSudoku, null);
+                [state, complete] = solvePartOfSudoku(state, n, setStateOfSudoku, null)
             }
         } else {
-            [state, complete] = solvePartOfSudoku(state, n, setStateOfSudoku, showMessage);
+            [state, complete] = solvePartOfSudoku(state, n, setStateOfSudoku, showMessage)
         }
     })
 

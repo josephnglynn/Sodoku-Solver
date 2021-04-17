@@ -1,10 +1,10 @@
 <script lang="ts">
-    import {Pages} from "../api/Pages";
-    import StockSudoku from "./StockSudoku.svelte";
+    import {Pages} from "../api/Pages"
+    import StockSudoku from "./StockSudoku.svelte"
     import {slide} from "svelte/transition"
 
-    export let changePage: (page: Pages, length: number) => void;
-    let size: number = null;
+    export let changePage: (page: Pages, length: number) => void
+    let size: number = null
 
     enum Problem {
         TO_BIG,
@@ -21,7 +21,7 @@
         } else if (size <= 1) {
             error = Problem.TO_SMALL
         } else {
-            changePage(Pages.SetSudoku, size);
+            changePage(Pages.SetSudoku, size)
         }
     }
 </script>

@@ -1,12 +1,12 @@
 <script lang="ts">
-    import {Pages} from "../api/Pages";
-    import Sudoku from "./Sudoku.svelte";
+    import {Pages} from "../api/Pages"
+    import Sudoku from "./Sudoku.svelte"
 
-    export let length: number = 3;
-    export let changePage: (page: Pages, State: Array<Array<number>>, allInOne: boolean) => void;
-    export let showMessage: (message: String, onAccept: Function, onCancel: Function) => void;
+    export let length: number = 3
+    export let changePage: (page: Pages, State: Array<Array<number>>, allInOne: boolean) => void
+    export let showMessage: (message: String, onAccept: Function, onCancel: Function) => void
 
-    let state: Array<Array<number>> = [];
+    let state: Array<Array<number>> = []
 
     const checkIfSudokuIsValid = (): Boolean => {
         //Check for wrong Numbers
@@ -14,7 +14,7 @@
             for (let k = 0; k < state.length; k++) {
                 if (state[i][k] != null) {
                     if (state[i][k] <= 0 || state[i][k] > state.length) {
-                        return false;
+                        return false
                     }
 
                 }
@@ -23,17 +23,17 @@
 
         //We don't do anything else as they will soon now if its wrong
 
-        return true;
+        return true
     }
 
     const onContinue = (allInOne: boolean) => {
         if (!checkIfSudokuIsValid()) {
             showMessage("The sudoku is invalid", () => {
             }, () => {
-            });
-            return;
+            })
+            return
         }
-        changePage(Pages.Solver, state, allInOne);
+        changePage(Pages.Solver, state, allInOne)
     }
 
 

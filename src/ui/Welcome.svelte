@@ -1,23 +1,23 @@
 <script lang="ts">
-    import {Pages} from "../api/Pages";
-    import {writable} from "svelte/store";
-    import {onMount} from "svelte";
+    import {Pages} from "../api/Pages"
+    import {writable} from "svelte/store"
+    import {onMount} from "svelte"
 
-    export let changePage: (page: Pages) => void;
+    export let changePage: (page: Pages) => void
 
-    const savedTheme = localStorage.getItem("theme");
-    const theme = writable(savedTheme);
+    const savedTheme = localStorage.getItem("theme")
+    const theme = writable(savedTheme)
     theme.subscribe(value => {
-        localStorage.setItem("theme", value === "dark-mode" ? "dark-mode" : "");
+        localStorage.setItem("theme", value === "dark-mode" ? "dark-mode" : "")
     })
 
-    let toggled: Boolean = false;
-    let buttonToggle: Boolean = false;
+    let toggled: Boolean = false
+    let buttonToggle: Boolean = false
 
     onMount(() => {
         if (savedTheme != null && savedTheme == "dark-mode") {
-            toggleDarkTheme();
-            buttonToggle = true; //Needed So Animation Still Shows
+            toggleDarkTheme()
+            buttonToggle = true //Needed So Animation Still Shows
         }
     })
 
