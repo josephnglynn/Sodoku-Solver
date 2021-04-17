@@ -1,10 +1,34 @@
 <script lang="ts">
     import {Pages} from "../api/Pages";
+    import {writable} from "svelte/store";
+    import {onMount} from "svelte";
 
     export let changePage: (page: Pages) => void;
 
+    const savedTheme = localStorage.getItem("theme");
+    const theme = writable(savedTheme);
+    theme.subscribe(value => {
+        localStorage.setItem("theme", value === "dark-mode" ? "dark-mode" : "");
+    })
+
+    let toggled: Boolean = false;
+    let buttonToggle: Boolean = false;
+
+    onMount(() => {
+        if (savedTheme != null && savedTheme == "dark-mode") {
+            toggleDarkTheme();
+            buttonToggle = true; //Needed So Animation Still Shows
+        }
+    })
+
     const toggleDarkTheme = () => {
         document.body.classList.toggle("dark-mode")
+        toggled = !toggled;
+        if (toggled) {
+            theme.set("dark-mode")
+        } else {
+            theme.set("");
+        }
     }
 
 
@@ -26,7 +50,7 @@
     <footer>
         <button on:click={()=>changePage(Pages.ChooseSize)} class="is-primary button">Continue</button>
         <div style="display: flex; justify-content: space-between">
-            {#if document.body.className == "dark-mode"}
+            {#if buttonToggle}
                 <label class="switch">
                     <input on:click={toggleDarkTheme} checked="checked" type="checkbox">
                     <span class="slider"></span>
@@ -48,11 +72,11 @@
 <style>
 
     .switch {
+        align-self: center;
         width: 60px;
         height: 30px;
         position: relative;
         display: inline-block;
-
     }
 
     .slider {
