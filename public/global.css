@@ -54,7 +54,7 @@ input:disabled {
 
 @media (max-width: 480px) {
   .button {
-    width: 80vw
+    width: 80vw;
   }
 }
 
@@ -68,7 +68,7 @@ input:disabled {
 .button {
   align-content: center;
   text-align: center;
-  color: #000000;
+  color: #000;
   margin: 0;
 }
 
@@ -83,7 +83,8 @@ input:disabled {
   vertical-align: center;
 }
 
-.button.is-primary:focus, .button.is-primary:hover {
+.button.is-primary:focus,
+.button.is-primary:hover {
   background-color: #009c84;
 }
 
@@ -130,8 +131,6 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -143,17 +142,13 @@ body.dark-mode input {
   color: white;
 }
 
-.button {
-  justify-content: center;
-}
-
 body.dark-mode {
   background-color: #242424;
 }
 
 body.dark-mode main {
   background-color: #242424;
-  color: #ffffff;
+  color: #fff;
 }
 
 body.dark-mode button.is-primary {
@@ -161,13 +156,11 @@ body.dark-mode button.is-primary {
   background-color: #00ffd4;
 }
 
-
 .hidden-label {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
   width: 1px;
-
   margin: -1px;
   padding: 0;
   overflow: hidden;
