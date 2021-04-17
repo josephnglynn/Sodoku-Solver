@@ -69,6 +69,7 @@ input:disabled {
   text-align: center;
   color: #000;
   margin: 0;
+  display: inline
 }
 
 .button.is-primary {
@@ -79,7 +80,6 @@ input:disabled {
   font-size: 1rem;
   line-height: 1.5;
   position: relative;
-  vertical-align: center;
 }
 
 .button.is-primary:focus,
@@ -95,7 +95,6 @@ input:disabled {
   font-size: 1rem;
   line-height: 1.5;
   position: relative;
-  vertical-align: top;
 }
 
 .button.is-danger:focus,
@@ -112,7 +111,6 @@ input:disabled {
   font-size: 1rem;
   line-height: 1.5;
   position: relative;
-  vertical-align: top;
 }
 
 table {
