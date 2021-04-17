@@ -22,11 +22,12 @@
     })
 
     const toggleDarkTheme = () => {
-        document.body.classList.toggle("dark-mode")
         toggled = !toggled;
         if (toggled) {
+            document.body.classList.add("dark-mode")
             theme.set("dark-mode")
         } else {
+            document.body.classList.remove("dark-mode")
             theme.set("");
         }
     }
