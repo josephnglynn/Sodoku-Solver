@@ -57,6 +57,7 @@
                 </label>
             {:else }
                 <label class="switch">
+                    Dark Mode Toggle
                     <input on:click={toggleDarkTheme} type="checkbox">
                     <span class="slider"></span>
                 </label>
