@@ -1,165 +1,259 @@
 html,
 body {
-  position: relative;
-  width: 100%;
-  height: 100%;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 ::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 body {
-  color: #333;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 a {
-  color: rgb(0, 100, 200);
-  text-decoration: none;
+    color: rgb(0, 100, 200);
+    text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 a:visited {
-  color: rgb(0, 80, 160);
+    color: rgb(0, 80, 160);
 }
 
 label {
-  display: block;
+    display: block;
 }
 
 input,
 button,
 select,
 textarea {
-  font-family: inherit;
-  font-size: inherit;
-  padding: 0.4em;
-  margin: 0 0 0.5em 0;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 2px;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0.4em;
+    margin: 0 0 0.5em 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 2px;
 }
 
 input:disabled {
-  color: #ccc;
+    color: #ccc;
 }
 
 @media (max-width: 480px) {
-  .button {
-    width: 80vw;
-  }
+    .button {
+        width: 80vw;
+    }
 }
 
 @media (min-width: 480px) {
-  .button {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+    .button {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
 .button {
-  align-content: center;
-  text-align: center;
-  color: #000;
-  margin: 0;
+    align-content: center;
+    text-align: center;
+    color: #000;
+    margin: 0;
 }
 
 .button.is-primary {
-  background-color: #00d1b2;
-  border-color: transparent;
-  border-radius: 4px;
-  display: inline-flex;
-  font-size: 1rem;
-  line-height: 1.5;
-  position: relative;
+    background-color: #00d1b2;
+    border-color: transparent;
+    border-radius: 4px;
+    display: inline-flex;
+    font-size: 1rem;
+    line-height: 1.5;
+    position: relative;
 }
 
 .button.is-primary:focus,
 .button.is-primary:hover {
-  background-color: #009c84;
+    background-color: #009c84;
+}
+
+.button.is-primary:focus {
+    background-color: white;
+}
+
+body.dark-mode .button.is-primary:focus {
+    background-color: #242424;
+    border-radius: 4px;
+    border-color: #00d1b2;
+    color: #fff;
+}
+
+body.dark-mode .button.is-primary {
+    animation: changeBorderPrimary 500ms;
+}
+
+@keyframes changeBorderPrimary {
+    0% {
+        background-color: #242424;
+        color: #fff;
+        border-radius: 12px;
+    }
+    100% {
+        background-color: #00d1b2;
+        color: #000;
+        border-radius: 4px;
+    }
+}
+
+body.dark-mode .button.is-primary:hover {
+    animation: changeBackgroundPrimary 500ms;
+    background-color: #242424;
+    border-radius: 12px;
+    border-color: #00d1b2;
+    color: #fff;
+}
+
+@keyframes changeBackgroundPrimary {
+    0% {
+        background-color: #00d1b2;
+        color: #000;
+        border-radius: 4px;
+    }
+    100% {
+        background-color: #242424;
+        color: #fff;
+        border-radius: 12px;
+    }
 }
 
 .button.is-danger {
-  background-color: #f14668;
-  border-color: transparent;
-  border-radius: 4px;
-  display: inline-flex;
-  font-size: 1rem;
-  line-height: 1.5;
-  position: relative;
+    background-color: #e81944;
+    border-color: transparent;
+    border-radius: 4px;
+    display: inline-flex;
+    font-size: 1rem;
+    line-height: 1.5;
+    position: relative;
 }
 
 .button.is-danger:focus,
 .button.is-danger:hover {
-  background-color: #e81944;
+    background-color: #e81944;
+}
+
+body.dark-mode .button.is-danger:focus {
+    background-color: #242424;
+    border-radius: 4px;
+    border-color: #e81944;
+    color: #fff;
+}
+
+body.dark-mode .button.is-danger {
+    animation: changeBorderDanger 500ms;
+}
+
+@keyframes changeBorderDanger {
+    0% {
+        background-color: #242424;
+        color: #fff;
+        border-radius: 12px;
+    }
+    100% {
+        background-color: #e81944;
+        color: #000;
+        border-radius: 4px;
+    }
+}
+
+body.dark-mode .button.is-danger:hover {
+    animation: changeBackgroundDanger 500ms;
+    background-color: #242424;
+    border-radius: 12px;
+    border-color: #e81944;
+    color: #fff;
+}
+
+@keyframes changeBackgroundDanger {
+    0% {
+        background-color: #e81944;
+        color: #000;
+        border-radius: 4px;
+    }
+    100% {
+        background-color: #242424;
+        color: #fff;
+        border-radius: 12px;
+    }
 }
 
 .button.is-warning {
-  background-color: #ffdd57;
-  border-color: transparent;
-  color: rgba(0, 0, 0, 0.7);
-  border-radius: 4px;
-  display: inline-flex;
-  font-size: 1rem;
-  line-height: 1.5;
-  position: relative;
+    background-color: #ffdd57;
+    border-color: transparent;
+    color: rgba(0, 0, 0, 0.7);
+    border-radius: 4px;
+    display: inline-flex;
+    font-size: 1rem;
+    line-height: 1.5;
+    position: relative;
 }
 
 table {
-  margin: 1em auto;
-  border-collapse: collapse;
-  border-spacing: 0;
+    margin: 1em auto;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 input[type=number] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 body.dark-mode input {
-  background-color: #242424;
-  color: white;
+    background-color: #242424;
+    color: white;
 }
 
 body.dark-mode {
-  background-color: #242424;
+    background-color: #242424;
 }
 
 body.dark-mode main {
-  background-color: #242424;
-  color: #fff;
+    background-color: #242424;
+    color: #fff;
 }
 
 body.dark-mode button.is-primary {
-  color: black;
-  background-color: #00ffd4;
+    color: black;
+    background-color: #00ffd4;
 }
 
 .hidden-label {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  position: absolute;
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
 }
