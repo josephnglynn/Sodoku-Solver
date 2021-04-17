@@ -17,13 +17,13 @@
                 {#each sub as s, i}
                     {#if (i + 1) % length === 0}
                         <td style="border-right: solid">
-                            <input type="number" id={i.toString()} required bind:value={state[x][i]} >
-                            <label class="hidden-label" for={i.toString()}></label>
+                            <input type="number" id={i.toString()+"1"} required bind:value={state[x][i]} >
+                            <label class="hidden-label" for={i.toString()+"1"}></label>
                         </td>
                     {:else}
                         <td>
-                            <input type="number" id={i.toString()} required bind:value={state[x][i]}>
-                            <label class="hidden-label" for={i.toString()}></label>
+                            <input type="number" id={i.toString()+"2"} required bind:value={state[x][i]}>
+                            <label class="hidden-label" for={i.toString()+"2"}></label>
                         </td>
                     {/if}
                 {/each}
@@ -33,13 +33,13 @@
                 {#each sub as s, i}
                     {#if (i + 1) % length === 0}
                         <td style="border-right: solid">
-                            <input type="number" id={i.toString()} required bind:value={state[x][i]}>
-                            <label class="hidden-label" for={i.toString()}></label>
+                            <input type="number" id={i.toString()+"3"} required bind:value={state[x][i]}>
+                            <label class="hidden-label" for={i.toString()+"3"}></label>
                         </td>
                     {:else}
                         <td>
-                            <input type="number" id={i.toString()} required bind:value={state[x][i]}>
-                            <label class="hidden-label" for={i.toString()}></label>
+                            <input type="number" id={i.toString()+"4"} required bind:value={state[x][i]}>
+                            <label class="hidden-label" for={i.toString()+"4"}></label>
                         </td>
                     {/if}
                 {/each}
