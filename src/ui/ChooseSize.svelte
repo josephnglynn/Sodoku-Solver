@@ -14,6 +14,7 @@
 
     let error: Problem = null;
     const verify = () => {
+        document.getElementById("sudokuSizeInput").focus()
         if (size == null) {
             error = Problem.NULL
         } else if (size >= 5 && error != Problem.TO_BIG) {
