@@ -16,9 +16,15 @@
             <tr style="border-bottom: solid">
                 {#each sub as s, i}
                     {#if (i + 1) % length === 0}
-                        <td style="border-right: solid"><input type="number" required bind:value={state[x][i]} style="width: 35px"></td>
+                        <td style="border-right: solid">
+                            <input type="number" id={i.toString()} required bind:value={state[x][i]} >
+                            <label class="hidden-label" for={i.toString()}></label>
+                        </td>
                     {:else}
-                        <td><input type="number" required bind:value={state[x][i]} style="width: 35px"></td>
+                        <td>
+                            <input type="number" id={i.toString()} required bind:value={state[x][i]}>
+                            <label class="hidden-label" for={i.toString()}></label>
+                        </td>
                     {/if}
                 {/each}
             </tr>
@@ -26,9 +32,15 @@
             <tr>
                 {#each sub as s, i}
                     {#if (i + 1) % length === 0}
-                        <td style="border-right: solid"><input type="number" required bind:value={state[x][i]} style="width: 35px"></td>
+                        <td style="border-right: solid">
+                            <input type="number" id={i.toString()} required bind:value={state[x][i]}>
+                            <label class="hidden-label" for={i.toString()}></label>
+                        </td>
                     {:else}
-                        <td><input type="number" required bind:value={state[x][i]} style="width: 35px"></td>
+                        <td>
+                            <input type="number" id={i.toString()} required bind:value={state[x][i]}>
+                            <label class="hidden-label" for={i.toString()}></label>
+                        </td>
                     {/if}
                 {/each}
             </tr>
@@ -68,5 +80,7 @@
     input {
         margin: 0;
         border: 0;
+        width: 35px;
+        text-align: center;
     }
 </style>

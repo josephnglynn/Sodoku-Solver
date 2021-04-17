@@ -52,12 +52,14 @@
         <div style="display: flex; justify-content: space-between">
             {#if buttonToggle}
                 <label class="switch">
-                    <input on:click={toggleDarkTheme} checked="checked" type="checkbox">
+                    <label class="hidden-label" for="darkModeToggle">Dark Mode Toggle</label>
+                    <input id="darkModeToggle" on:click={toggleDarkTheme} checked="checked" type="checkbox">
                     <span class="slider"></span>
                 </label>
             {:else }
                 <label class="switch">
-                    <input on:click={toggleDarkTheme} type="checkbox">
+                    <label class="hidden-label" for="darkModeToggle">Dark Mode Toggle</label>
+                    <input id="darkModeToggle" on:click={toggleDarkTheme} type="checkbox">
                     <span class="slider"></span>
                 </label>
             {/if}
@@ -70,6 +72,8 @@
 
 
 <style>
+
+
 
     .switch {
         align-self: center;

@@ -35,16 +35,17 @@
     <div style="flex: 1; display: flex; justify-content: center; align-items: center; flex-direction: column; margin-bottom: 20px">
         <StockSudoku/>
         <h4>Example Of Size Of 3</h4>
-        <label>
-            <input type="number" bind:value={size}>
-        </label>
+        <label class="hidden-label" for="sudokuSizeInput">Input Size Of Sudoku</label>
+        <input id="sudokuSizeInput" type="number" bind:value={size}>
+
         {#if error === Problem.TO_SMALL}
             <div transition:slide>
                 <h6 class="is-danger" style="color: red">Error: Must Be Greater Than 1</h6>
             </div>
         {:else if error === Problem.TO_BIG}
             <div transition:slide>
-                <h6 class="is-warning" style="color: red">Warning: Are You Sure You Want It To Be This Size. If So Press Continue Button Again</h6>
+                <h6 class="is-warning" style="color: red">Warning: Are You Sure You Want It To Be This Size. If So Press
+                    Continue Button Again</h6>
             </div>
         {:else if error === Problem.NULL}
             <div transition:slide>
