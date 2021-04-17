@@ -57,7 +57,6 @@
                 </label>
             {:else }
                 <label class="switch">
-                    Dark Mode Toggle
                     <input on:click={toggleDarkTheme} type="checkbox">
                     <span class="slider"></span>
                 </label>
@@ -101,7 +100,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: #000000;
+        background-color: #aaaaaa;
         -webkit-transition: .4s;
         transition: .4s;
     }
@@ -117,14 +116,14 @@
         width: 26px;
         left: 4px;
         top: 2px;
-        background-color: rebeccapurple;
+        background-color: #008469;
         -webkit-transition: .4s;
         transition: .4s;
         text-align: center;
     }
 
     input:checked + .slider {
-        background-color: rebeccapurple;
+        background-color: #00ffd4;
     }
 
     input:checked + .slider:before {
