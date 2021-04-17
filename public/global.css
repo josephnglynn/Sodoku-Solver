@@ -75,7 +75,7 @@ input:disabled {
     background-color: #00d1b2;
     border-color: transparent;
     border-radius: 4px;
-    display: inline-flex;
+    display: inline;
     font-size: 1rem;
     line-height: 1.5;
     position: relative;
@@ -188,7 +188,7 @@ body.dark-mode .button.is-primary:hover,
     background-color: #e81944;
     border-color: transparent;
     border-radius: 4px;
-    display: inline-flex;
+    display: inline;
     font-size: 1rem;
     line-height: 1.5;
     position: relative;
@@ -245,7 +245,7 @@ body.dark-mode .button.is-primary:hover,
     border-color: transparent;
     color: rgba(0, 0, 0, 0.7);
     border-radius: 4px;
-    display: inline-flex;
+    display: inline;
     font-size: 1rem;
     line-height: 1.5;
     position: relative;
