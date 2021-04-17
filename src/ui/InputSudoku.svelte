@@ -67,10 +67,6 @@
 
 
 <style>
-    button {
-        margin-bottom: 1em;
-    }
-
     main {
         text-align: center;
         padding: 1em;
@@ -83,12 +79,5 @@
         text-transform: uppercase;
         font-size: 3em;
         font-weight: 100;
-    }
-
-
-    @media (max-width: 480px) {
-        button {
-            width: 80vw
-        }
     }
 </style>

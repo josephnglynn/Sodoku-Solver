@@ -138,10 +138,6 @@
     }
 
 
-    button {
-        margin-bottom: 1em;
-    }
-
     main {
         text-align: center;
         padding: 1em;
@@ -153,19 +149,6 @@
         text-transform: uppercase;
         font-size: 3.5em;
         font-weight: 100;
-    }
-
-    @media (max-width: 480px) {
-        .button {
-            width: 80vw
-        }
-    }
-
-    @media (min-width: 480px) {
-        .button {
-            padding-left: 20px;
-            padding-right: 20px;
-        }
     }
 
 
