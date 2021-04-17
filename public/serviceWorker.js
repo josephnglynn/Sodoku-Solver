@@ -1,4 +1,4 @@
-const CACHE_NAME = "Sudoku_Solver_cache_v1.0.2";
+const CACHE_NAME = "Sudoku_Solver_cache_v1.0.3";
 const URLS_TO_CACHE = [
     "/Sudoku-Solver/",
     "/Sudoku-Solver/index.html",
