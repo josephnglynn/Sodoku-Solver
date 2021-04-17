@@ -81,27 +81,75 @@ input:disabled {
     position: relative;
 }
 
-.button.is-primary:focus,
-.button.is-primary:hover {
-    background-color: #009c84;
+.button.is-primary-dark {
+    background-color: #00d1b2;
+    border-color: transparent;
+    border-radius: 4px;
+    display: inline-flex;
+    font-size: 1rem;
+    line-height: 1.5;
+    position: relative;
+}
+
+.button.is-primary {
+    animation: changeBorderPirmaryLight 500ms;
 }
 
 .button.is-primary:focus {
-    background-color: white;
+    background-color: #fff;
+    border-radius: 4px;
+    border-color: #00d1b2;
+    color: #000;
 }
 
-body.dark-mode .button.is-primary:focus {
+@keyframes changeBorderPrimaryLight {
+    0% {
+        background-color: #242424;
+        color: #fff;
+        border-radius: 16px;
+    }
+    100% {
+        background-color: #00d1b2;
+        color: #000;
+        border-radius: 6px;
+    }
+}
+
+.button.is-primary:hover {
+    animation: changeBackgroundPrimaryLight 500ms;
+    background-color: #fff;
+    border-radius: 16px;
+    border-color: #00d1b2;
+    color: #000;
+}
+
+@keyframes changeBackgroundPrimaryLight {
+    0% {
+        background-color: #00d1b2;
+        color: #000;
+        border-radius: 4px;
+    }
+    100% {
+        background-color: #fff;
+        color: #000;
+        border-radius: 16px;
+    }
+}
+
+body.dark-mode .button.is-primary:focus,
+.button.is-primary-dark:focus {
     background-color: #242424;
     border-radius: 4px;
     border-color: #00d1b2;
     color: #fff;
 }
 
-body.dark-mode .button.is-primary {
-    animation: changeBorderPrimary 500ms;
+body.dark-mode .button.is-primary,
+.button.is-primary-dark {
+    animation: changeBorderPrimaryDark 500ms;
 }
 
-@keyframes changeBorderPrimary {
+@keyframes changeBorderPrimaryDark {
     0% {
         background-color: #242424;
         color: #fff;
@@ -114,15 +162,16 @@ body.dark-mode .button.is-primary {
     }
 }
 
-body.dark-mode .button.is-primary:hover {
-    animation: changeBackgroundPrimary 500ms;
+body.dark-mode .button.is-primary:hover,
+.button.is-primary-dark:hover {
+    animation: changeBackgroundPrimaryDark 500ms;
     background-color: #242424;
     border-radius: 12px;
     border-color: #00d1b2;
     color: #fff;
 }
 
-@keyframes changeBackgroundPrimary {
+@keyframes changeBackgroundPrimaryDark {
     0% {
         background-color: #00d1b2;
         color: #000;
@@ -145,19 +194,15 @@ body.dark-mode .button.is-primary:hover {
     position: relative;
 }
 
-.button.is-danger:focus,
-.button.is-danger:hover {
-    background-color: #e81944;
-}
 
-body.dark-mode .button.is-danger:focus {
+.button.is-danger:focus {
     background-color: #242424;
     border-radius: 4px;
     border-color: #e81944;
     color: #fff;
 }
 
-body.dark-mode .button.is-danger {
+.button.is-danger {
     animation: changeBorderDanger 500ms;
 }
 
@@ -174,7 +219,7 @@ body.dark-mode .button.is-danger {
     }
 }
 
-body.dark-mode .button.is-danger:hover {
+.button.is-danger:hover {
     animation: changeBackgroundDanger 500ms;
     background-color: #242424;
     border-radius: 12px;
