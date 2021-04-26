@@ -111,7 +111,7 @@
     }
 
     .slider:before {
-        padding-top: 4px;
+        padding-top: 2px;
         position: absolute;
         content: "🌞";
         align-content: center;
@@ -139,7 +139,7 @@
         vertical-align: center;
         color: white;
         text-align: center;
-        padding-top: 4px;
+        padding-top: 2px;
     }
 
 
