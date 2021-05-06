@@ -13,8 +13,8 @@
 
     let complete: boolean = false
 
-    for(let i = 0; i < state.length; i++) {
-        for (let k = 0; k < state[i].length; k++) {
+    for(let i = 0; i < state.length; ++i) {
+        for (let k = 0; k < state[i].length; ++k) {
             if (state[i][k] == null) {
                 state[i][k] = 0
             }

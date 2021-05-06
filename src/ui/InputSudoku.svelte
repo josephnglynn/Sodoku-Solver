@@ -10,8 +10,8 @@
 
     const checkIfSudokuIsValid = (): Boolean => {
         //Check for wrong Numbers
-        for (let i = 0; i < state.length; i++) {
-            for (let k = 0; k < state.length; k++) {
+        for (let i = 0; i < state.length; ++i) {
+            for (let k = 0; k < state.length; ++k) {
                 if (state[i][k] != null) {
                     if (state[i][k] <= 0 || state[i][k] > state.length) {
                         return false

@@ -1,9 +1,9 @@
 <script lang="ts">
     export let length: number = 3
     export let state: Array<Array<number>> = []
-    for (let i = 0; i < length * length; i++) {
+    for (let i = 0; i < length * length; ++i) {
         state.push([])
-        for (let k = 0; k < length * length; k++) {
+        for (let k = 0; k < length * length; ++k) {
             state[i].push(null)
         }
     }
